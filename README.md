@@ -1,18 +1,4 @@
-<h2 align="left">Hi 👋! My name is Saransh Kawadkar</h2>
-
-###
-
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=saransh-283&hide_title=true&hide_rank=true&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=vue-dark&locale=en&hide_border=true" height="130" alt="stats graph"  />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=saransh-283&locale=en&hide_title=true&layout=compact&card_width=320&langs_count=7&theme=vue-dark&hide_border=true&custom_title=Hello" height="130" alt="languages graph"  />
-  <img src="https://streak-stats.demolab.com?user=saransh-283&locale=en&mode=daily&theme=vue-dark&hide_border=true&border_radius=5" height="130" alt="streak graph"  />
-</div>
-
-###
-
-<img align="right" height="150" src="https://media.licdn.com/dms/image/D4D03AQGeq3tOb4Fz4g/profile-displayphoto-shrink_800_800/0/1664964544784?e=1697673600&v=beta&t=PIxQKT3XK4ghBUKM41isY3ycSusXvQGdVz3ss2ORZZA"  />
-
-###
+<h1 align="center">Hi 👋! My name is Saransh Kawadkar</h1>
 
 <div align="center">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="30" alt="html5 logo"  />
@@ -29,6 +15,8 @@
   <img width="12" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="30" alt="react logo"  />
   <img width="12" />
+  <br />
+  <br />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" height="30" alt="vuejs logo"  />
   <img width="12" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" height="30" alt="git logo"  />
@@ -42,32 +30,41 @@
   <img src="https://cdn.simpleicons.org/blender/F5792A" height="30" alt="blender logo"  />
   <img width="12" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg" height="30" alt="canva logo"  />
+  <img width="12" />
 </div>
 
-###
+<br />
 
-<div align="left">
-  <a href="https://www.instagram.com/sark283/" target="_blank">
-    <img src="https://img.shields.io/static/v1?message=Instagram&logo=instagram&label=&color=E4405F&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="instagram logo"  />
-  </a>
-  <a href="https://www.discordapp.com/users/743421774062026802" target="_blank">
-    <img src="https://img.shields.io/static/v1?message=Discord&logo=discord&label=&color=7289DA&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="discord logo"  />
-  </a>
-  <a href="mailto:saranshmm@gmail.com" target="_blank">
-    <img src="https://img.shields.io/static/v1?message=Gmail&logo=gmail&label=&color=D14836&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="gmail logo"  />
-  </a>
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=saransh-283&hide_title=true&hide_rank=true&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=vue-dark&locale=en&hide_border=true" height="130" alt="stats graph"  />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=saransh-283&locale=en&hide_title=true&layout=compact&card_width=320&langs_count=7&theme=vue-dark&hide_border=true&custom_title=Hello" height="130" alt="languages graph"  />
+  <img src="https://streak-stats.demolab.com?user=saransh-283&locale=en&mode=daily&theme=vue-dark&hide_border=true&border_radius=5" height="130" alt="streak graph"  />
+</div>
+
+<img align="center" src="https://raw.githubusercontent.com/saransh-283/saransh-283/output/snake.svg" alt="Snake animation" />
+
+<hr />
+
+<div align="center">
   <a href="https://www.linkedin.com/in/saransh-kawadkar/" target="_blank">
     <img src="https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&label=&color=0077B5&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="linkedin logo"  />
   </a>
+  <img width="12" />
+  <a href="mailto:saranshmm@gmail.com" target="_blank">
+    <img src="https://img.shields.io/static/v1?message=Gmail&logo=gmail&label=&color=D14836&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="gmail logo"  />
+  </a>
+  <img width="12" />
+  <a href="https://www.instagram.com/sark283/" target="_blank">
+    <img src="https://img.shields.io/static/v1?message=Instagram&logo=instagram&label=&color=E4405F&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="instagram logo"  />
+  </a>
+  <img width="12" />
+  <a href="https://www.discordapp.com/users/743421774062026802" target="_blank">
+    <img src="https://img.shields.io/static/v1?message=Discord&logo=discord&label=&color=7289DA&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="discord logo"  />
+  </a>
+  <img width="12" />
   <a href="https://t.me/SarK283" target="_blank">
     <img src="https://img.shields.io/static/v1?message=Telegram&logo=telegram&label=&color=2CA5E0&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="telegram logo"  />
   </a>
 </div>
-
-###
-
-<br clear="both">
-
-<img src="https://raw.githubusercontent.com/saransh-283/saransh-283/output/snake.svg" alt="Snake animation" />
 
 ###
