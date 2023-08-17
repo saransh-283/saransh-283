@@ -3,9 +3,9 @@
 ###
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=saransh-283&hide_title=true&hide_rank=true&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=vue-dark&locale=en&hide_border=true" height="150" alt="stats graph"  />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=saransh-283&locale=en&hide_title=true&layout=compact&card_width=320&langs_count=7&theme=vue-dark&hide_border=true&custom_title=Hello" height="150" alt="languages graph"  />
-  <img src="https://streak-stats.demolab.com?user=saransh-283&locale=en&mode=daily&theme=vue-dark&hide_border=true&border_radius=5" height="150" alt="streak graph"  />
+  <img src="https://github-readme-stats.vercel.app/api?username=saransh-283&hide_title=true&hide_rank=true&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=vue-dark&locale=en&hide_border=true" height="130" alt="stats graph"  />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=saransh-283&locale=en&hide_title=true&layout=compact&card_width=320&langs_count=7&theme=vue-dark&hide_border=true&custom_title=Hello" height="130" alt="languages graph"  />
+  <img src="https://streak-stats.demolab.com?user=saransh-283&locale=en&mode=daily&theme=vue-dark&hide_border=true&border_radius=5" height="130" alt="streak graph"  />
 </div>
 
 ###
@@ -50,10 +50,10 @@
   <a href="https://www.instagram.com/sark283/" target="_blank">
     <img src="https://img.shields.io/static/v1?message=Instagram&logo=instagram&label=&color=E4405F&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="instagram logo"  />
   </a>
-  <a href="discordapp.com/users/743421774062026802" target="_blank">
+  <a href="https://www.discordapp.com/users/743421774062026802" target="_blank">
     <img src="https://img.shields.io/static/v1?message=Discord&logo=discord&label=&color=7289DA&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="discord logo"  />
   </a>
-  <a href="saranshmm@gmail.com" target="_blank">
+  <a href="mailto:saranshmm@gmail.com" target="_blank">
     <img src="https://img.shields.io/static/v1?message=Gmail&logo=gmail&label=&color=D14836&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="gmail logo"  />
   </a>
   <a href="https://www.linkedin.com/in/saransh-kawadkar/" target="_blank">
