@@ -15,13 +15,17 @@ jobs:
 
       - name: Update Images
         run: |
-          sed -i 's#https://github-readme-stats.vercel.app/api?username=saransh-283.*#'"$(curl -s https://github-readme-stats.vercel.app/api?username=saransh-283&hide_title=true&hide_rank=true&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=vue-dark&locale=en&hide_border=true)#" README.md
-          sed -i 's#https://github-readme-stats.vercel.app/api/top-langs?username=saransh-283.*#'"$(curl -s https://github-readme-stats.vercel.app/api/top-langs?username=saransh-283&locale=en&hide_title=true&layout=compact&card_width=320&langs_count=7&theme=vue-dark&hide_border=true)#" README.md
-          sed -i 's#https://streak-stats.demolab.com?user=saransh-283.*#'"$(curl -s https://streak-stats.demolab.com?user=saransh-283&locale=en&mode=daily&theme=vue-dark&hide_border=true&border_radius=5)#" README.md
+          curl -s https://github-readme-stats.vercel.app/api?username=saransh-283&hide_title=true&hide_rank=true&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=vue-dark&locale=en&hide_border=true > temp1
+          curl -s https://github-readme-stats.vercel.app/api/top-langs?username=saransh-283&locale=en&hide_title=true&layout=compact&card_width=320&langs_count=7&theme=vue-dark&hide_border=true > temp2
+          curl -s https://streak-stats.demolab.com?user=saransh-283&locale=en&mode=daily&theme=vue-dark&hide_border=true&border_radius=5 > temp3
+          sed -i 's#https://github-readme-stats.vercel.app/api?username=saransh-283.*#'"$(cat temp1)"'#' README.md
+          sed -i 's#https://github-readme-stats.vercel.app/api/top-langs?username=saransh-283.*#'"$(cat temp2)"'#' README.md
+          sed -i 's#https://streak-stats.demolab.com?user=saransh-283.*#'"$(cat temp3)"'#' README.md
+          rm temp1 temp2 temp3
 
       - name: Commit and Push Changes
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --local user.email "saranshmm@gmail.com"
+          git config --local user.name "saransh-283"
           git commit -am "Update Readme images"
           git push
