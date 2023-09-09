@@ -2,6 +2,8 @@
 
 ###
 
+I'm passionate about crafting captivating web experiences with cutting-edge tech like ReactJS, NextJS, TailwindCSS, and Material UI. I've dabbled in blockchain and am eager to explore new horizons in web development. With hands-on experience in web and graphic design, I've contributed to startups like Bask Health and DigiGrow, designing user-friendly portals for healthcare and crafting eye-catching social media content. I'm all about collaboration and elevating project success. 🚀
+
 <div align="center">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="30" alt="html5 logo"  />
   <img width="12" />
