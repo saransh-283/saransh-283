@@ -1,5 +1,15 @@
-// @ts-check
-import { defineConfig } from 'astro/config';
+import mdx from '@astrojs/mdx';
+import tailwind from '@astrojs/tailwind';
+import icon from "astro-icon";
+import { defineConfig, squooshImageService } from 'astro/config';
 
-// https://astro.build/config
-export default defineConfig({});
+export default defineConfig({
+  integrations: [tailwind(), mdx(), icon({
+    include: {
+      mdi: ["*"]
+    }
+  })],
+  image: {
+    service: squooshImageService()
+  }
+});
