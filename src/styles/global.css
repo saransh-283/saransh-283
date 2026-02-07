@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+/* ----------------------------- */
+/* Design Tokens (Theme Layer)   */
+/* ----------------------------- */
+@theme {
+  /* Breakpoints */
+  --breakpoint-xs: 480px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+
+  /* Colors */
+  --color-black: #000;
+  --color-white: #fff;
+  --color-orange: #E06330;
+
+  /* Fonts */
+  --font-sans: "Inter", sans-serif;
+  --font-monospace: "Inconsolata", monospace;
+
+  /* Font Sizes */
+  --text-xs: .75rem;
+  --text-sm: .875rem;
+  --text-tiny: .875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+
+  /* Letter Spacing */
+  --tracking-wide: .025em;
+}
+
+/* ----------------------------- */
+/* Base Styles (plugin replacement) */
+/* ----------------------------- */
+@layer base {
+  h2 {
+    letter-spacing: var(--tracking-wide);
+    font-weight: 700;
+  }
+
+  li {
+    letter-spacing: var(--tracking-wide);
+  }
+}
+
+/* ----------------------------- */
+/* Dark mode: system preference */
+/* ----------------------------- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+}
