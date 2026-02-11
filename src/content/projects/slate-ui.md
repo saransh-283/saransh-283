@@ -2,7 +2,7 @@
 inProgress: true
 title: Slate UI
 description: Slate UI is a native Qt desktop application for easy interaction with locally hosted large language models. Built with modern C++ and Qt6, it provides a clean, efficient offline interface for working with local LLMs.
-thumbnail: https://thumbs.dreamstime.com/b/autumn-nature-landscape-colorful-forest-autumn-nature-landscape-colorful-forest-morning-sunlight-131400332.jpg
+thumbnail: https://github.com/saransh-283/slate-ui/blob/master/screenshots/thumbnail.png
 what: Slate UI is a desktop chat interface for interacting with locally hosted large language models using Qt6 for the GUI and `llama.cpp` / `ggml` for local inference. It supports configurable model presets, a chat-bubble-style conversation view, and runs entirely offline with no external API dependencies.
 features: [
   "Clean chat-bubble UI for conversing with local LLMs",
@@ -34,4 +34,5 @@ screenshots: []
 link: /projects/slate-ui
 github: https://github.com/saransh-283/slate-ui
 tags: ['C++', 'Qt6', 'LLM', 'Desktop App', 'llama.cpp']
+featured: true
 ---

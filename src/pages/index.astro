@@ -24,9 +24,9 @@ const projects = await getCollection('projects');
 		</section>
 
 		<section class="mt-12">
-			<h2 class="text-lg font-extrabold text-neutral-900">What I've been working on</h2>
+			<h2 class="text-lg font-extrabold text-neutral-900">Featured Projects</h2>
 			<div class="mt-6 space-y-8">
-				{projects.map((project) => (
+				{projects.filter((project) => project.data.featured).map((project) => (
 					<ProjectRow
 						title={project.data.title}
 						description={project.data.description}

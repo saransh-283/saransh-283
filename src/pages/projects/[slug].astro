@@ -1,6 +1,6 @@
 ---
 import Layout from '@layouts/Layout.astro';
-import Tags from '@components/ui/Tags.astro';
+import Tag from '@components/ui/Tag.astro';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -60,7 +60,7 @@ const { project } = Astro.props;
 				<div class="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
 					{project.data.screenshots.map((shot: { src: string; alt: string; label: string }) => (
 						<figure class="overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-black/5">
-							<img src={shot.src + '?raw=true'} alt={shot.alt} loading="lazy" class="h-auto w-full" />
+							<img src={shot.src + '?raw=true'} alt={shot.alt} loading="lazy" class="h-full w-full" />
 							<figcaption class="p-3 text-xs text-neutral-500">{shot.label}</figcaption>
 						</figure>
 					))}
@@ -70,7 +70,9 @@ const { project } = Astro.props;
 
 		<footer class="mt-10">
 			<div>
-				<Tags tags={project.data.tags} />
+				{project.data.tags.map((tag: string) => (
+					<Tag text={tag} />
+				))}
 			</div>
 			<div class="mt-6 flex flex-wrap gap-3">
 				<a href={project.data.github} target="_blank" rel="noopener" class="inline-flex items-center rounded-lg bg-neutral-900 px-4 py-2 text-sm font-semibold text-white hover:bg-neutral-800">

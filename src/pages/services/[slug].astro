@@ -1,0 +1,82 @@
+---
+import Tag from '@components/ui/Tag.astro';
+import Layout from '@layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+	const services = await getCollection('services');
+	return services.map((service) => ({
+		params: { slug: service.slug },
+		props: { service },
+	}));
+}
+
+const { service } = Astro.props;
+---
+
+<Layout title={`${service.data.title} | Service`}>
+	<main class="mx-auto max-w-3xl">
+		<header class="pt-4">
+			<div class="flex flex-wrap items-center gap-3">
+				<h1 class="text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl">{service.data.title}</h1>
+				{service.data.featured && (
+					<span class="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-800 ring-1 ring-emerald-100">
+						Featured
+					</span>
+				)}
+			</div>
+			<p class="mt-3 text-sm leading-6 text-neutral-500">{service.data.summary}</p>
+		</header>
+
+		<section class="mt-10">
+			<h2 class="text-base font-bold text-neutral-900">What I do</h2>
+			<p class="mt-2 text-sm leading-6 text-neutral-500">{service.data.what}</p>
+		</section>
+
+		{service.data.focus?.length > 0 && (
+			<section class="mt-10">
+				<h2 class="text-base font-bold text-neutral-900">Focus areas</h2>
+				<ul class="mt-2 list-disc space-y-2 pl-5 text-sm text-neutral-500">
+					{service.data.focus.map((item: string) => <li>{item}</li>)}
+				</ul>
+			</section>
+		)}
+
+		{service.data.typicalWork?.length > 0 && (
+			<section class="mt-10">
+				<h2 class="text-base font-bold text-neutral-900">Typical work</h2>
+				<ul class="mt-2 list-disc space-y-2 pl-5 text-sm text-neutral-500">
+					{service.data.typicalWork.map((item: string) => <li>{item}</li>)}
+				</ul>
+			</section>
+		)}
+
+		{service.data.deliverables?.length > 0 && (
+			<section class="mt-10">
+				<h2 class="text-base font-bold text-neutral-900">Deliverables</h2>
+				<ul class="mt-2 list-disc space-y-2 pl-5 text-sm text-neutral-500">
+					{service.data.deliverables.map((item: string) => <li>{item}</li>)}
+				</ul>
+			</section>
+		)}
+
+		<footer class="mt-10">
+			{service.data.tags?.length > 0 && (
+				<div class="flex flex-wrap gap-2">
+					{service.data.tags.map((tag: string) => (
+						<Tag text={tag} />
+					))}
+				</div>
+			)}
+
+			<div class="mt-6 flex flex-wrap gap-3">
+				<a
+					href="/services"
+					class="inline-flex items-center rounded-lg bg-white px-4 py-2 text-sm font-semibold text-neutral-700 ring-1 ring-black/10 hover:bg-neutral-50"
+				>
+					Back
+				</a>
+			</div>
+		</footer>
+	</main>
+</Layout>
