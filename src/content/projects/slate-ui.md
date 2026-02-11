@@ -31,7 +31,7 @@ technologies: [
   "llama.cpp / ggml / gguf (local model runtimes)"
 ]
 screenshots: []
-link: /slate-ui
+link: /projects/slate-ui
 github: https://github.com/saransh-283/slate-ui
 tags: ['C++', 'Qt6', 'LLM', 'Desktop App', 'llama.cpp']
 ---

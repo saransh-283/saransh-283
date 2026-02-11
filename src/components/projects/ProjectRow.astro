@@ -1,0 +1,44 @@
+---
+// using emoji instead of icon component
+
+export type ProjectRowData = {
+	title: string;
+	description: string;
+	href: string;
+	thumbnail?: string;
+	tags: string[];
+};
+
+const { title, description, href, thumbnail, tags } = Astro.props as ProjectRowData;
+---
+
+<article class="flex items-start gap-6">
+	<a href={href} class="block shrink-0">
+		<div class="h-[70px] w-[120px] overflow-hidden rounded-lg bg-neutral-100 ring-1 ring-black/5">
+			{thumbnail ? (
+				<img src={thumbnail} alt={title} loading="lazy" class="h-full w-full object-cover" />
+			) : (
+				<div class="h-full w-full" />
+			)}
+		</div>
+	</a>
+
+	<div class="min-w-0">
+		<div class="flex items-start justify-between gap-3">
+			<div class="min-w-0">
+				<h3 class="truncate text-base font-semibold text-neutral-900">{title}</h3>
+				<p class="mt-1 line-clamp-2 text-sm text-neutral-500">{description}</p>
+			</div>
+			<a href={href} class="mt-0.5 shrink-0 text-neutral-300 hover:text-neutral-500" aria-label={`Open ${title}`}>
+				<span aria-hidden class="text-sm">↗️</span>
+			</a>
+		</div>
+		<div class="mt-3 flex flex-wrap gap-2">
+			{tags.map((tag) => (
+				<span class="rounded-md bg-neutral-50 px-2 py-1 text-[11px] font-medium text-neutral-500 ring-1 ring-black/5">
+					{tag}
+				</span>
+			))}
+		</div>
+	</div>
+</article>

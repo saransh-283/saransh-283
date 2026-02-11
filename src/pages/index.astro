@@ -1,18 +1,53 @@
 ---
-import About from '@components/About.astro';
-import Contact from '@components/Contact.astro';
-import Hero from '@components/Hero.astro';
-import Projects from '@components/Projects.astro';
-import BackToTop from '@components/ui/BackToTop.astro';
 import Layout from '@layouts/Layout.astro';
+import ProjectRow from '@components/projects/ProjectRow.astro';
+import { getCollection } from 'astro:content';
+
+const projects = await getCollection('projects');
 ---
 
-<Layout title="Saransh | Web developer">
-	<main>
-		<Hero />
-		<About />
-		<Projects />
-		<Contact />
-		<BackToTop />
+<Layout title="John Doe | Developer">
+	<main class="mx-auto max-w-3xl">
+		<section class="pt-4">
+			<div class="flex items-center justify-center gap-2">
+				<div class="text-2xl">👋</div>
+				<h1 class="text-center text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl">
+					Hello there! I'm John
+				</h1>
+			</div>
+			<p class="mx-auto mt-4 max-w-2xl text-center text-sm leading-6 text-neutral-500">
+				I'm a full-stack developer that loves building products and web apps that can impact millions of lives.
+			</p>
+			<p class="mx-auto mt-3 max-w-2xl text-center text-sm leading-6 text-neutral-500">
+				I'm a senior software engineer with 7 years of experience building scalable web apps that are performance optimized and good looking.
+			</p>
+		</section>
+
+		<section class="mt-12">
+			<h2 class="text-lg font-extrabold text-neutral-900">What I've been working on</h2>
+			<div class="mt-6 space-y-8">
+				{projects.map((project) => (
+					<ProjectRow
+						title={project.data.title}
+						description={project.data.description}
+						href={`/projects/${project.slug}`}
+						thumbnail={project.data.thumbnail}
+						tags={project.data.tags}
+					/>
+				))}
+			</div>
+		</section>
+
+		<section class="mt-12">
+			<h2 class="text-lg font-extrabold text-neutral-900">Tech Stack</h2>
+			<div class="mt-5 flex flex-wrap items-center gap-3 text-neutral-400 text-xl">
+				<span title="React">⚛️</span>
+				<span title="TypeScript">🟦</span>
+				<span title="Node.js">🟢</span>
+				<span title="Tailwind">🎨</span>
+				<span title="AWS">☁️</span>
+				<span title="Vercel">🚀</span>
+			</div>
+		</section>
 	</main>
 </Layout>

@@ -1,5 +1,5 @@
 ---
-import Navbar from '@components/Navbar.astro';
+import Sidebar from '@components/layout/Sidebar.astro';
 import { SEO } from 'astro-seo';
 import "@styles/global.css";
 export interface LayoutProps {
@@ -23,11 +23,18 @@ const { title = 'John Doe | Web developer' } = Astro.props as LayoutProps;
 
 		<title>{title}</title>
 	</head>
-	<body
-		class="mx-auto max-w-screen-xl bg-white px-5 font-sans text-white dark:bg-black xs:text-[16px] md:text-[18px]"
-	>
-		<Navbar />
-		<slot />
+	<body class="bg-neutral-100 font-sans text-neutral-900 xs:text-[16px] md:text-[18px]">
+		<div class="mx-auto flex min-h-screen max-w-7xl gap-6">
+			<Sidebar />
+			<div class="flex min-w-0 flex-1 flex-col px-4 py-6 lg:px-6 lg:py-8">
+				<div class="min-h-[calc(100vh-80px)] rounded-3xl bg-white px-6 py-10 shadow-sm ring-1 ring-black/5 sm:px-10">
+					<slot />
+				</div>
+				<footer class="py-8 text-center text-xs text-neutral-400">
+					2026 — Built by Manu Arora
+				</footer>
+			</div>
+		</div>
 		<style is:global>
 			/* Improve Page speed */
 			/* https://css-tricks.com/almanac/properties/c/content-visibility/ */

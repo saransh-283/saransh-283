@@ -1,0 +1,31 @@
+---
+import Layout from '@layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import ServiceCard from '@components/services/ServiceCard.astro';
+
+const services = (await getCollection('services'))
+	.sort((a, b) => (a.data.order ?? 999) - (b.data.order ?? 999));
+---
+
+<Layout title="Services | John Doe">
+	<main class="mx-auto max-w-3xl">
+		<header class="pt-4 text-center">
+			<div class="mx-auto h-9 w-9 text-emerald-400 text-3xl">🧰</div>
+			<h1 class="mt-3 text-4xl font-extrabold tracking-tight text-neutral-900">Services</h1>
+			<p class="mx-auto mt-3 max-w-xl text-sm leading-6 text-neutral-500">
+				How I can help you ship faster with fewer bugs.
+			</p>
+		</header>
+
+		<section class="mt-10 space-y-8">
+			{services.map((service) => (
+				<ServiceCard
+					title={service.data.title}
+					description={service.data.description}
+					image={service.data.image}
+					tags={service.data.tags}
+				/>
+			))}
+		</section>
+	</main>
+</Layout>

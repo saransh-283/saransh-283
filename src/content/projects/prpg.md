@@ -50,7 +50,7 @@ screenshots: [
     label: "NPC with name"
   }
 ]
-link: /prpg
+link: /projects/prpg
 github: https://github.com/saransh-283/prpg
 tags: ['C++', 'OpenGL', 'Procedural Generation', 'LLM Integration', 'llama.cpp']
 ---
