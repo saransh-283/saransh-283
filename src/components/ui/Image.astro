@@ -1,0 +1,39 @@
+---
+interface Props {
+  src: string;
+  alt?: string;
+  containerClass?: string;
+  imgClass?: string;
+}
+
+const {
+  src,
+  alt = "",
+  imgClass = "",
+    containerClass = "",
+} = Astro.props;
+---
+
+<div
+  class={`skeleton-img bg-gray-300 animate-pulse ${containerClass}`}
+>
+  <img
+    src={src}
+    alt={alt}
+    loading="lazy"
+    class={`opacity-0 transition-opacity duration-500 ${imgClass}`}
+  />
+</div>
+
+<script>
+  document.querySelectorAll(".skeleton-img img").forEach((img) => {
+    if (img.complete) reveal(img);
+    else img.addEventListener("load", () => reveal(img));
+  });
+
+  function reveal(img) {
+    img.classList.remove("opacity-0");
+    img.parentElement.classList.remove("animate-pulse");
+    img.parentElement.classList.remove("bg-gray-300");
+  }
+</script>

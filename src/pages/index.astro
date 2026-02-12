@@ -2,24 +2,38 @@
 import Layout from '@layouts/Layout.astro';
 import ProjectRow from '@components/projects/ProjectRow.astro';
 import { getCollection } from 'astro:content';
+import ArrowRight from '@icons/arrow-right.astro';
+import Image from '@components/ui/Image.astro';
 
 const projects = await getCollection('projects');
+
+const technologies = [
+	{ name: 'React', icon: '/stacks/react.webp' },
+	{ name: 'Node.js', icon: '/stacks/node.png' },
+	{ name: 'Next.js', icon: '/stacks/next.png' },
+	{ name: 'MongoDB', icon: '/stacks/mongodb.png' },
+	{ name: 'C++', icon: '/stacks/c++.jpg' },
+	{ name: 'Qt6', icon: '/stacks/qt6.png' },
+];
 ---
 
-<Layout title="John Doe | Developer">
+<Layout title="Saransh | Developer">
 	<main class="mx-auto max-w-3xl">
 		<section class="pt-4">
-			<div class="flex items-center justify-center gap-2">
+			<div class="flex items-center gap-2">
 				<div class="text-2xl">👋</div>
 				<h1 class="text-center text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl">
-					Hello there! I'm John
+					Hello there! I'm Saransh
 				</h1>
 			</div>
-			<p class="mx-auto mt-4 max-w-2xl text-center text-sm leading-6 text-neutral-500">
-				I'm a full-stack developer that loves building products and web apps that can impact millions of lives.
+			<p class="mt-4 max-w-2xl text-sm leading-6 text-neutral-500">
+				I design and build systems that value clarity, correctness, and long-term maintainability. Clean abstractions, sharp edges, and workflows that hold up under pressure, are what I strive for in my work.
 			</p>
-			<p class="mx-auto mt-3 max-w-2xl text-center text-sm leading-6 text-neutral-500">
-				I'm a senior software engineer with 7 years of experience building scalable web apps that are performance optimized and good looking.
+			<p class="mt-3 max-w-2xl text-sm leading-6 text-neutral-500">
+				I'm drawn to problems where architecture matters as much as execution. From low-level engines to high-level interfaces, I enjoy turning messy ideas into coherent, dependable software.
+			</p>
+			<p class="mt-3 max-w-2xl text-sm leading-6 text-neutral-500">
+				My work lives at the intersection of infrastructure, product thinking, and experimentation, where curiosity is allowed to get its hands dirty.
 			</p>
 		</section>
 
@@ -36,17 +50,18 @@ const projects = await getCollection('projects');
 					/>
 				))}
 			</div>
+			<a href="/projects" class="mt-6 flex justify-center items-center gap-6 text-gray-700">
+				<div>View All Projects</div>
+				<ArrowRight className="h-5 w-5" />
+			</a>
 		</section>
 
 		<section class="mt-12">
 			<h2 class="text-lg font-extrabold text-neutral-900">Tech Stack</h2>
-			<div class="mt-5 flex flex-wrap items-center gap-3 text-neutral-400 text-xl">
-				<span title="React">⚛️</span>
-				<span title="TypeScript">🟦</span>
-				<span title="Node.js">🟢</span>
-				<span title="Tailwind">🎨</span>
-				<span title="AWS">☁️</span>
-				<span title="Vercel">🚀</span>
+			<div class="mt-5 flex flex-wrap items-center gap-5 text-neutral-400 text-xl">
+				{technologies.map((tech) => (
+					<Image src={tech.icon} alt={`${tech.name} icon`} containerClass='h-16 w-16' />
+				))}
 			</div>
 		</section>
 	</main>

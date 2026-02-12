@@ -1,29 +1,76 @@
 ---
 inProgress: true
 title: INRT
-description: INRT is a Solana + Flutter prototype that bootstraps a local test validator and a demo client workflow, including airdrops and SPL token minting for rapid iteration on on-chain + app interactions.
-what: INRT provides a "one command" local Solana environment initializer (validator + funded signer + minted SPL token) and a Flutter desktop client that can read the generated token mint configuration for development/testing.
-features: [
-  "One-command local ledger initialization via ledger_initializer.sh",
-  "Starts a local solana-test-validator and configures Solana CLI to use it",
-  "Airdrops SOL to the configured signer for testing",
-  "Mints an SPL token and wires the mint address into the Flutter app constants",
-  "Flutter desktop app scaffold for interacting with the local test setup"
-]
+description: "A Solana-based, blockchain-first banking prototype with a Flutter desktop client and on-chain programs for identity uniqueness and fixed deposits."
+thumbnail: https://raw.githubusercontent.com/saransh-283/inrt/refs/heads/main/screenshots/thumbnail.png
+banner: https://raw.githubusercontent.com/saransh-283/inrt/refs/heads/main/screenshots/banner.png
+what: "INRT is a decentralized banking-style application built on Solana. Instead of using a traditional database, it treats the blockchain as the ledger: users interact via wallets, PDAs, and associated token accounts (ATAs) to manage balances and account-like sub-wallets (savings/current/FD/RD)."
+features:
+    - Wallet creation and login using mnemonic phrases (HD wallet concepts)
+    - Sub-wallet/account-style structure (PDA + ATAs) for separating balances
+    - Send / receive INRT SPL tokens
+    - Fixed Deposit (FD) program scaffolding (on-chain) and UI flows
+    - Local validator workflow and one-command initializer script
 planned: [
-  "Build and deploy on-chain programs as part of the initializer script",
-  "End-to-end flows that exercise the program(s) from the Flutter client",
-  "Improved configuration management (multiple clusters / keypairs)",
-  "Better developer UX: logs, status UI, and reset/reseed tooling"
+    "Stronger recovery and identity workflows (e.g., biometric-based key derivation)",
+    "Hardened security model for secrets and recovery",
+    "Mainnet-ready deployment + production-grade program audits",
+    "Rebuild + deploy pipeline for programs and expanded tests"
 ]
 technologies: [
-  "Dart + Flutter (desktop client)",
-  "Solana CLI + solana-test-validator (local chain)",
-  "SPL Token (minting/testing)",
-  "Rust (programs / on-chain components)",
-  "Bash scripting (automation)"
+    "Flutter / Dart (client)",
+    "Solana (local validator + RPC)",
+    "SPL Token + Associated Token Accounts (ATAs)",
+    "Rust (Solana programs / Anchor)",
+    "Bash scripting (automation)"
 ]
-screenshots: []
+screenshots: [
+    {
+        src: "https://github.com/saransh-283/inrt/blob/main/screenshots/splash.png",
+        alt: "Splash",
+        label: "Splash"
+    },
+    {
+        src: "https://github.com/saransh-283/inrt/blob/main/screenshots/signup_form.png",
+        alt: "Signup Form",
+        label: "Signup Form"
+    },
+    {
+        src: "https://github.com/saransh-283/inrt/blob/main/screenshots/signup_success.png",
+        alt: "Signup Success",
+        label: "Signup Success"
+    },
+    {
+        src: "https://github.com/saransh-283/inrt/blob/main/screenshots/login.png",
+        alt: "Login",
+        label: "Login"
+    },
+    {
+        src: "https://github.com/saransh-283/inrt/blob/main/screenshots/new_wallet.png",
+        alt: "New Wallet",
+        label: "New Wallet"
+    },
+    {
+        src: "https://github.com/saransh-283/inrt/blob/main/screenshots/send.png",
+        alt: "Send",
+        label: "Send"
+    },
+    {
+        src: "https://github.com/saransh-283/inrt/blob/main/screenshots/receive.png",
+        alt: "Receive",
+        label: "Receive"
+    },
+    {
+        src: "https://github.com/saransh-283/inrt/blob/main/screenshots/create_account.png",
+        alt: "Create Account",
+        label: "Create Account"
+    },
+    {
+        src: "https://github.com/saransh-283/inrt/blob/main/screenshots/account.png",
+        alt: "Account View",
+        label: "Account"
+    }
+]
 link: /projects/inrt
 github: https://github.com/saransh-283/inrt
 tags: ['Solana', 'Flutter', 'Dart', 'Rust', 'SPL Token', 'Web3']

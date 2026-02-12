@@ -1,4 +1,5 @@
 ---
+import Image from "@components/ui/Image.astro";
 import Tag from "@components/ui/Tag.astro";
 import ArrowRight from "@icons/arrow-right.astro";
 
@@ -16,7 +17,7 @@ const { title, description, href, thumbnail, tags } = Astro.props as ServiceCard
 	<a href={href} class="block shrink-0">
 		<div class="h-17.5 w-30 overflow-hidden rounded-lg bg-neutral-100 ring-1 ring-black/5">
 			{thumbnail ? (
-				<img src={`${thumbnail}?raw=true`} alt={title} loading="lazy" class="h-full w-full object-cover" />
+				<Image src={`${thumbnail}?raw=true`} alt={title} containerClass="h-full w-full" imgClass="object-cover opacity-0" />
 			) : (
 				<div class="h-full w-full" />
 			)}

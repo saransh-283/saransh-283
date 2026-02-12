@@ -20,6 +20,7 @@ const projectsCollection = defineCollection({
       .optional(),
     link: z.string(),
     thumbnail: z.string().optional(),
+    banner: z.string().optional(),
     github: z.string(),
     tags: z.array(z.string()),
     img_alt: z.string().optional(),

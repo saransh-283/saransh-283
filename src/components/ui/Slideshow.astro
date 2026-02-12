@@ -1,0 +1,85 @@
+---
+import Image from '@components/ui/Image.astro';
+
+export interface Slide {
+  src: string;
+  alt?: string;
+  caption?: string;
+}
+
+interface Props {
+  images: Slide[];
+  alt?: string;
+}
+
+const { images } = Astro.props;
+---
+
+<figure class="slideshow w-full max-w-225 mx-auto">
+  <div class="viewport relative overflow-hidden">
+    <div class="track flex transition-transform duration-600">
+      {images.map((image) => (
+          <Image src={image.src + '?raw=true'} alt={image.alt ?? ""} containerClass='slide min-w-full h-full' imgClass="h-120 mx-auto object-contain block" />
+      ))}
+    </div>
+
+    <button class="nav prev absolute top-1/2 -translate-y-1/2 left-3 bg-black/50 text-white border-none text-[2rem] py-1 px-3 cursor-pointer rounded-lg" aria-label="Previous">&lt;</button>
+    <button class="nav next absolute top-1/2 -translate-y-1/2 right-3 bg-black/50 text-white border-none text-[2rem] py-1 px-3 cursor-pointer rounded-lg" aria-label="Next">&gt;</button>
+  </div>
+
+  <figcaption class="caption mt-2 text-center text-gray-600 text-sm"></figcaption>
+
+  <div class="dots flex justify-center gap-2 mt-2">
+    {images.map((_, i) => (
+      <button class="dot w-2.5 h-2.5 rounded-full bg-gray-400 border-none cursor-pointer" data-index={i} aria-label={`Go to slide ${i + 1}`}></button>
+    ))}
+  </div>
+
+
+</figure>
+
+<script>
+  const root = document.querySelector(".slideshow");
+  const track = root.querySelector(".track");
+  const slides = root.querySelectorAll(".slide");
+  const prevBtn = root.querySelector(".prev");
+  const nextBtn = root.querySelector(".next");
+  const dots = root.querySelectorAll(".dot");
+  const caption = root.querySelector(".caption");
+
+  let index = 0;
+  const total = slides.length;
+
+  function update() {
+    track.style.transform = `translateX(-${index * 100}%)`;
+
+    dots.forEach((d, i) => {
+      d.classList.toggle('bg-gray-800', i === index);
+      d.classList.toggle('bg-gray-400', i !== index);
+    });
+
+    const img = slides[index].querySelector("img");
+    caption.textContent = img.getAttribute("alt") || "";
+  }
+
+  prevBtn.addEventListener("click", () => {
+    index = (index - 1 + total) % total;
+    update();
+  });
+
+  nextBtn.addEventListener("click", () => {
+    index = (index + 1) % total;
+    update();
+  });
+
+  dots.forEach((dot) => {
+    dot.addEventListener("click", () => {
+      index = Number(dot.dataset.index);
+      update();
+    });
+  });
+
+  update();
+</script>
+
+

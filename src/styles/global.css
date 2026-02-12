@@ -12,12 +12,12 @@
   --breakpoint-xl: 1280px;
 
   /* Colors */
-  --color-black: #000;
+  --color-black: #111827; /* gray-900 */
   --color-white: #fff;
   --color-orange: #E06330;
 
   /* Fonts */
-  --font-sans: "Inter", sans-serif;
+  --font-sans: "Cal Sans", sans-serif;
   --font-monospace: "Inconsolata", monospace;
 
   /* Font Sizes */
@@ -31,9 +31,6 @@
   --text-3xl: 1.875rem;
   --text-4xl: 2.25rem;
   --text-5xl: 3rem;
-
-  /* Letter Spacing */
-  --tracking-wide: .025em;
 }
 
 /* ----------------------------- */
@@ -55,12 +52,10 @@
   }
 
   h2 {
-    letter-spacing: var(--tracking-wide);
     font-weight: 700;
   }
 
   li {
-    letter-spacing: var(--tracking-wide);
   }
 }
 

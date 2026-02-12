@@ -3,6 +3,7 @@ inProgress: true
 title: PRPG
 description: PRPG (Procedural RPG) is a small C++ project demonstrating procedural generation, rendering, and lightweight LLM integration for in-game behaviors. It's intended as a prototype and research playground for procedural world generation, NPC behaviors, and integration with local model runtimes.
 thumbnail: https://raw.githubusercontent.com/saransh-283/prpg/refs/heads/main/screenshots/thumbnail.png
+banner: https://raw.githubusercontent.com/saransh-283/prpg/refs/heads/main/screenshots/banner.png
 what: PRPG is a prototype application that generates procedural roads, terrain and simple city elements, renders them with OpenGL, and experiments with local LLM integration (via `llama`/`ggml`) for NPC/dialogue behaviors.
 features: [
     "Procedural road / terrain generation utilities",
@@ -26,7 +27,7 @@ technologies: [
   "OpenGL + glad + glm (rendering)",
   "SDL2 + SDL2_ttf (windowing/input and fonts)",
   "nlohmann_json (config / serialization)",
-  "llama / ggml / gguf (local model runtimes — optional)"
+  "llama / ggml / gguf (local model runtimes - optional)"
 ]
 screenshots: [
   {
