@@ -29,7 +29,7 @@ const isActive = (href: string) => {
 };
 ---
 
-<aside class="hidden shrink-0 lg:block">
+<aside id="sidebar" class="fixed bg-neutral-100 h-full w-1/2 shadow-sm z-10 transition top-0 left-0 -translate-x-full shrink-0 lg:relative lg:block lg:translate-x-0 lg:shadow-none lg:w-auto">
 	<div class="sticky top-0 flex h-screen flex-col px-6 py-8">
 		<div class="flex items-center gap-3">
 			<img
@@ -87,3 +87,23 @@ const isActive = (href: string) => {
 		</div>
 	</div>
 </aside>
+<div id="sidebar-toggle" class="absolute h-0.5 w-8 right-8 top-8 bg-gray-700 lg:hidden before:content-[''] before:absolute before:right-0 before:-top-2 before:h-0.5 before:w-8 before:bg-gray-700 before:transition after:content-[''] after:absolute after:right-0 after:-bottom-2 after:h-0.5 after:w-8 after:bg-gray-700 after:transition"></div>
+
+<script>
+	const toggle = document.getElementById('sidebar-toggle');
+	const sidebar = document.getElementById('sidebar');
+	
+	toggle.addEventListener('click', () => {
+		sidebar.classList.toggle('-translate-x-full');
+		sidebar.classList.toggle('translate-x-0');
+
+		toggle.classList.toggle('before:-rotate-45')
+		toggle.classList.toggle('before:-top-2');
+
+		toggle.classList.toggle('after:rotate-45')
+		toggle.classList.toggle('after:-bottom-2');
+
+		toggle.classList.toggle('bg-transparent');
+		toggle.classList.toggle('bg-gray-700');	
+	});
+</script>
