@@ -26,47 +26,47 @@ technologies: [
 ]
 screenshots: [
     {
-        src: "https://github.com/saransh-283/inrt/blob/main/screenshots/splash.png",
+        src: "https://raw.githubusercontent.com/saransh-283/inrt/refs/heads/main/screenshots/splash.png",
         alt: "Splash",
         label: "Splash"
     },
     {
-        src: "https://github.com/saransh-283/inrt/blob/main/screenshots/signup_form.png",
+        src: "https://raw.githubusercontent.com/saransh-283/inrt/refs/heads/main/screenshots/signup_form.png",
         alt: "Signup Form",
         label: "Signup Form"
     },
     {
-        src: "https://github.com/saransh-283/inrt/blob/main/screenshots/signup_success.png",
+        src: "https://raw.githubusercontent.com/saransh-283/inrt/refs/heads/main/screenshots/signup_success.png",
         alt: "Signup Success",
         label: "Signup Success"
     },
     {
-        src: "https://github.com/saransh-283/inrt/blob/main/screenshots/login.png",
+        src: "https://raw.githubusercontent.com/saransh-283/inrt/refs/heads/main/screenshots/login.png",
         alt: "Login",
         label: "Login"
     },
     {
-        src: "https://github.com/saransh-283/inrt/blob/main/screenshots/new_wallet.png",
+        src: "https://raw.githubusercontent.com/saransh-283/inrt/refs/heads/main/screenshots/new_wallet.png",
         alt: "New Wallet",
         label: "New Wallet"
     },
     {
-        src: "https://github.com/saransh-283/inrt/blob/main/screenshots/send.png",
+        src: "https://raw.githubusercontent.com/saransh-283/inrt/refs/heads/main/screenshots/send.png",
         alt: "Send",
         label: "Send"
     },
     {
-        src: "https://github.com/saransh-283/inrt/blob/main/screenshots/receive.png",
+        src: "https://raw.githubusercontent.com/saransh-283/inrt/refs/heads/main/screenshots/receive.png",
         alt: "Receive",
         label: "Receive"
     },
     {
-        src: "https://github.com/saransh-283/inrt/blob/main/screenshots/create_account.png",
+        src: "https://raw.githubusercontent.com/saransh-283/inrt/refs/heads/main/screenshots/create_account.png",
         alt: "Create Account",
         label: "Create Account"
     },
     {
-        src: "https://github.com/saransh-283/inrt/blob/main/screenshots/account.png",
+        src: "https://raw.githubusercontent.com/saransh-283/inrt/refs/heads/main/screenshots/account.png",
         alt: "Account View",
         label: "Account"
     }

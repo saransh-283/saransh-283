@@ -2,8 +2,8 @@
 inProgress: true
 title: Slate UI
 description: Slate UI is a native Qt desktop application for easy interaction with locally hosted large language models. Built with modern C++ and Qt6, it provides a clean, efficient offline interface for working with local LLMs.
-thumbnail: https://github.com/saransh-283/slate-ui/blob/master/screenshots/thumbnail.png
-banner: https://github.com/saransh-283/slate-ui/blob/master/screenshots/banner.png
+thumbnail: https://raw.githubusercontent.com/saransh-283/slate-ui/refs/heads/master/screenshots/thumbnail.png
+banner: https://raw.githubusercontent.com/saransh-283/slate-ui/refs/heads/master/screenshots/banner.png?raw=true
 what: Slate UI is a desktop chat interface for interacting with locally hosted large language models using Qt6 for the GUI and `llama.cpp` / `ggml` for local inference. It supports configurable model presets, a chat-bubble-style conversation view, and runs entirely offline with no external API dependencies.
 features: [
   "Clean chat-bubble UI for conversing with local LLMs",
@@ -33,17 +33,17 @@ technologies: [
 ]
 screenshots: [
   {
-    src: "https://github.com/saransh-283/slate-ui/blob/master/screenshots/startup.png",
+    src: "https://raw.githubusercontent.com/saransh-283/slate-ui/refs/heads/master/screenshots/startup.png",
     alt: "Startup screen",
     label: "Startup"
   },
   {
-    src: "https://github.com/saransh-283/slate-ui/blob/master/screenshots/chat.png",
+    src: "https://raw.githubusercontent.com/saransh-283/slate-ui/refs/heads/master/screenshots/chat.png",
     alt: "Chat interface",
     label: "Chat"
   },
   {
-    src: "https://github.com/saransh-283/slate-ui/blob/master/screenshots/modelconfig.png",
+    src: "https://raw.githubusercontent.com/saransh-283/slate-ui/refs/heads/master/screenshots/modelconfig.png",
     alt: "Model configuration window",
     label: "Model Config"
   }

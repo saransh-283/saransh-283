@@ -24,10 +24,10 @@ technologies: [
   "rembg"
 ]
 screenshots: [
-  { src: "https://github.com/saransh-283/3d-MGV/blob/main/screenshots/console.png", alt: "Console output", label: "Console output" },
-  { src: "https://github.com/saransh-283/3d-MGV/blob/main/screenshots/warehouse.png", alt: "Warehouse sample", label: "Warehouse sample" },
-  { src: "https://github.com/saransh-283/3d-MGV/blob/main/screenshots/dice.png", alt: "Dice sample", label: "Dice sample" },
-  { src: "https://github.com/saransh-283/3d-MGV/blob/main/screenshots/skull.png", alt: "Skull sample", label: "Skull sample" }
+  { src: "https://raw.githubusercontent.com/saransh-283/3d-MGV/refs/heads/main/screenshots/console.png", alt: "Console output", label: "Console output" },
+  { src: "https://raw.githubusercontent.com/saransh-283/3d-MGV/refs/heads/main/screenshots/warehouse.png", alt: "Warehouse sample", label: "Warehouse sample" },
+  { src: "https://raw.githubusercontent.com/saransh-283/3d-MGV/refs/heads/main/screenshots/dice.png", alt: "Dice sample", label: "Dice sample" },
+  { src: "https://raw.githubusercontent.com/saransh-283/3d-MGV/refs/heads/main/screenshots/skull.png", alt: "Skull sample", label: "Skull sample" }
 ]
 link: /projects/3d-mgv
 github: https://github.com/saransh-283/3d-MGV

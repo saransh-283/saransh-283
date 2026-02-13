@@ -36,17 +36,17 @@ screenshots: [
     label: "Buildings"
   },
   {
-    src: "https://github.com/saransh-283/prpg/blob/main/screenshots/loading.png",
+    src: "https://raw.githubusercontent.com/saransh-283/prpg/refs/heads/main/screenshots/loading.png",
     alt: "Loading Screen",
     label: "Loading Screen"
   },
   {
-    src: "https://github.com/saransh-283/prpg/blob/main/screenshots/map.png",
+    src: "https://raw.githubusercontent.com/saransh-283/prpg/refs/heads/main/screenshots/map.png",
     alt: "Map",
     label: "Map"
   },
   {
-    src: "https://github.com/saransh-283/prpg/blob/main/screenshots/npc.png",
+    src: "https://raw.githubusercontent.com/saransh-283/prpg/refs/heads/main/screenshots/npc.png",
     alt: "NPC with name",
     label: "NPC with name"
   }
