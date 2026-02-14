@@ -6,6 +6,7 @@ import MessageIcon from '@icons/message.astro';
 import PuzzleIcon from '@icons/puzzle.astro';
 import EmailIcon from '@icons/email.astro';
 import LinkedinIcon from '@icons/linkedin.astro';
+import FiverrIcon from '@icons/fiverr.astro';
 
 type NavItem = {
 	label: string;
@@ -83,6 +84,11 @@ const isActive = (href: string) => {
 					</a>
 				</li>
 				<li>
+					<a class="flex items-center gap-2 text-neutral-600 hover:text-neutral-900" href="https://www.fiverr.com/saranshkk" target="_blank" rel="noopener">
+						<FiverrIcon className="h-4 w-4" />
+						<span>Fiverr</span>
+					</a>
+				</li>
 			</ul>
 		</div>
 	</div>
