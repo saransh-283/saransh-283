@@ -1,6 +1,12 @@
 ---
 import EmailIcon from "@icons/email.astro";
 import Layout from "@layouts/Layout.astro";
+
+const env = import.meta.env;
+const prod = env.PROD;
+
+const key =
+  prod ? env.WEB3FORMS_KEY_PROD : env.WEB3FORMS_KEY_DEV;
 ---
 
 <Layout title="Contact | Saransh">
@@ -16,26 +22,30 @@ import Layout from "@layouts/Layout.astro";
     </header>
 
     <section class="mt-10">
-      <form class="mx-auto max-w-2xl">
+      <form action="https://api.web3forms.com/submit" method="POST" class="mx-auto max-w-2xl">
+        <input type="hidden" name="access_key" value={key}>
         <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <label class="block">
             <span class="sr-only">Your Name</span>
-            <input type="text" name="name" placeholder="Your Name" class="w-full rounded-xl bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-400 ring-1 ring-black/5 focus:outline-none focus:ring-2 focus:ring-neutral-900/20" />
+            <input required type="text" name="name" placeholder="Your Name" class="w-full rounded-xl bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-400 ring-1 ring-black/5 focus:outline-none focus:ring-2 focus:ring-neutral-900/20" />
           </label>
           <label class="block relative">
             <span class="sr-only">Your email address</span>
-            <input type="email" name="email" placeholder="Your email address" class="w-full rounded-xl bg-neutral-50 px-4 py-3 pr-10 text-sm text-neutral-700 placeholder:text-neutral-400 ring-1 ring-black/5 focus:outline-none focus:ring-2 focus:ring-neutral-900/20" />
-            <span class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 rounded-md bg-indigo-600 p-1.5 text-white">@ </span>
+            <input required type="email" name="email" placeholder="Your email address" class="w-full rounded-xl bg-neutral-50 px-4 py-3 pr-10 text-sm text-neutral-700 placeholder:text-neutral-400 ring-1 ring-black/5 focus:outline-none focus:ring-2 focus:ring-neutral-900/20" />
           </label>
         </div>
 
         <label class="mt-4 block">
           <span class="sr-only">Your Message</span>
-          <textarea name="message" rows={10} placeholder="Your Message" class="w-full resize-none rounded-xl bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-400 ring-1 ring-black/5 focus:outline-none focus:ring-2 focus:ring-neutral-900/20"></textarea>
+          <textarea required name="message" rows={10} placeholder="Your Message" class="w-full resize-none rounded-xl bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-400 ring-1 ring-black/5 focus:outline-none focus:ring-2 focus:ring-neutral-900/20"></textarea>
         </label>
+
+        {prod &&<div class="h-captcha mx-auto mt-4 w-min" data-captcha="true"></div>}
 
         <button type="submit" class="mt-5 w-full rounded-xl bg-neutral-100 px-4 py-3 text-sm font-semibold text-neutral-500 ring-1 ring-black/5 hover:bg-neutral-200/70"> Submit </button>
       </form>
     </section>
   </main>
 </Layout>
+
+<script src="https://web3forms.com/client/script.js" async defer></script>
