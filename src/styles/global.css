@@ -51,6 +51,31 @@
     text-decoration: none;
   }
 
+  .custom-scrollbar {
+    scrollbar-color: #2563eb #f1f5f9;
+    scrollbar-width: thin;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 999px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #2563eb;
+    border: 2px solid #f1f5f9;
+    border-radius: 999px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #1d4ed8;
+  }
+
   h2 {
     font-weight: 700;
   }
