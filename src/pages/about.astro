@@ -38,6 +38,52 @@ const photos = [
 
 <p>Above all, I value clarity - clear interfaces, clear failure modes, clear intent in code. Software ages quickly; the goal is to leave behind something that still makes sense when context is gone and assumptions have shifted.</p>
       </div>
+
+      <div class="mx-auto mt-8 flex max-w-2xl flex-wrap gap-3">
+        <a
+          href="/Resume-Saransh_Kawadkar-Full_Stack.pdf"
+          download
+          class="inline-flex items-center rounded-lg bg-blue-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+        >
+          Download resume
+        </a>
+        <button
+          type="button"
+          id="resume-toggle"
+          aria-expanded="false"
+          aria-controls="resume-viewer"
+          class="inline-flex items-center rounded-lg bg-neutral-100 px-4 py-2 text-sm font-semibold text-neutral-900 ring-1 ring-inset ring-neutral-300 transition hover:bg-neutral-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+        >
+          View resume
+        </button>
+      </div>
+
+      <div id="resume-viewer" class="mx-auto mt-6 hidden max-w-2xl" aria-hidden="true">
+        <object
+          data="/Resume-Saransh_Kawadkar-Full_Stack.pdf#zoom=page-width&sidebar=0"
+          type="application/pdf"
+          class="h-[70vh] min-h-[32rem] w-full rounded-lg border border-neutral-200 bg-neutral-50"
+          aria-label="Resume PDF viewer"
+        >
+          <p class="p-5 text-sm text-neutral-600">
+            Your browser cannot display PDFs inline.
+            <a class="font-semibold text-blue-700 underline" href="/Resume-Saransh_Kawadkar-Full_Stack.pdf#zoom=page-width&sidebar=0" target="_blank" rel="noopener">Open the resume</a>.
+          </p>
+        </object>
+      </div>
     </section>
   </main>
 </Layout>
+
+<script>
+  const resumeToggle = document.getElementById('resume-toggle');
+  const resumeViewer = document.getElementById('resume-viewer');
+
+  resumeToggle?.addEventListener('click', () => {
+    const isOpen = resumeToggle.getAttribute('aria-expanded') === 'true';
+    resumeToggle.setAttribute('aria-expanded', String(!isOpen));
+    resumeViewer?.classList.toggle('hidden', isOpen);
+    resumeViewer?.setAttribute('aria-hidden', String(isOpen));
+    resumeToggle.textContent = isOpen ? 'View resume' : 'Hide resume';
+  });
+</script>
