@@ -7,7 +7,10 @@ import PuzzleIcon from "@icons/puzzle.astro";
 const services = (await getCollection("services")).sort((a, b) => (a.data.order ?? 999) - (b.data.order ?? 999));
 ---
 
-<Layout title="Services | Saransh">
+<Layout
+	title="Services | Saransh Kawadkar"
+	description="Engineering services by Saransh Kawadkar — web systems, application development, engineering tooling, problem solving, and test automation."
+>
   <main class="mx-auto max-w-3xl">
     <header class="pt-4 text-center">
       <div class="flex gap-6 justify-center items-center">

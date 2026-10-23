@@ -1,0 +1,26 @@
+{
+  "name": "Saransh Kawadkar — Software Engineer Portfolio",
+  "short_name": "Saransh",
+  "description": "Portfolio of Saransh Kawadkar: full-stack software engineer building reliable web systems, developer tooling, and automation.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "background_color": "#f5f5f5",
+  "theme_color": "#111827",
+  "lang": "en",
+  "region": "IN",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

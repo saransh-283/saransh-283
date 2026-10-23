@@ -12,9 +12,27 @@ export async function getStaticPaths() {
 }
 
 const { service } = Astro.props;
+
+const serviceSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'Service',
+	name: service.data.title,
+	description: service.data.summary,
+	url: new URL(`/services/${service.slug}`, Astro.site).href,
+	keywords: service.data.tags.join(', '),
+	provider: { '@type': 'Person', name: 'Saransh Kawadkar', url: Astro.site?.href },
+	areaServed: 'Worldwide',
+};
 ---
 
-<Layout title={`${service.data.title} | Service`}>
+<script is:inline type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+
+<Layout
+	title={`${service.data.title} | Saransh Kawadkar`}
+	description={`${service.data.summary} Engineering service offered by Saransh Kawadkar.`}
+	image={service.data.thumbnail}
+	type="article"
+>
 	<main class="mx-auto max-w-3xl">
 		<header class="pt-4">
 			<div class="flex flex-wrap items-center gap-3">

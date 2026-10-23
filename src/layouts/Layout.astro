@@ -3,29 +3,161 @@ import Sidebar from '@components/layout/Sidebar.astro';
 import { SEO } from 'astro-seo';
 import "@styles/global.css";
 import '@fontsource/cal-sans';
+
+const SITE = 'https://saranshkawadkar.com';
+const SITE_NAME = 'Saransh Kawadkar — Software Engineer & Full-Stack Developer';
+const DEFAULT_DESCRIPTION =
+	'Portfolio of Saransh Kawadkar — full-stack software engineer building reliable web systems, developer tooling, and automation with React, Next.js, Node.js, TypeScript, and C++. Browse featured projects, tech stack, and services.';
+const DEFAULT_OG_IMAGE = `${SITE}/og.jpg`;
+
 export interface LayoutProps {
 	title: string;
+	description?: string;
+	image?: string;
+	type?: string;
 }
 
-const { title = 'Saransh | Web developer' } = Astro.props as LayoutProps;
+const {
+	title = 'Saransh Kawadkar | Full-Stack Software Engineer & Web Developer',
+	description = DEFAULT_DESCRIPTION,
+	image = DEFAULT_OG_IMAGE,
+	type = 'website',
+} = Astro.props as LayoutProps;
+
+const url = new URL(Astro.url.pathname, SITE).href;
+const canonical = url.replace(/\/?$/, '/');
+const ogImage = image.startsWith('http') ? image : new URL(image, SITE).href;
+const ogTitle = title.split(' | ')[0].trim();
+
+const personSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'Person',
+	'@id': `${SITE}/#person`,
+	name: 'Saransh Kawadkar',
+	url: SITE,
+	image: `${SITE}/profile.jpg`,
+	jobTitle: 'Software Engineer',
+	description:
+		'Full-stack software engineer building reliable web systems, developer tooling, and automation with React, Next.js, Node.js, TypeScript, Python, and C++.',
+	email: 'mailto:saranshmm@gmail.com',
+	sameAs: [
+		'https://github.com/saransh-283',
+		'https://www.linkedin.com/in/saransh-kawadkar',
+		'https://www.instagram.com/sark283/',
+		'https://t.me/SarK283',
+		'https://www.fiverr.com/saranshkk',
+	],
+	address: { '@type': 'PostalAddress', addressCountry: 'IN' },
+};
+
+const websiteSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'WebSite',
+	'@id': `${SITE}/#website`,
+	url: SITE,
+	name: SITE_NAME,
+	description: DEFAULT_DESCRIPTION,
+	publisher: { '@id': `${SITE}/#person` },
+	inLanguage: 'en',
+};
+
+const breadcrumbs = Astro.url.pathname !== '/' && {
+	'@context': 'https://schema.org',
+	'@type': 'BreadcrumbList',
+	itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: SITE }, { '@type': 'ListItem', position: 2, name: title.split('|')[0].trim(), item: url }],
+};
+
+const schemas = [personSchema, websiteSchema, ...(breadcrumbs ? [breadcrumbs] : [])];
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="scroll-smooth" data-testid="html">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="generator" content={Astro.generator} />
 
-		<title>{title}</title>
+		<SEO
+			title={title}
+			description={description}
+			canonical={canonical}
+			noindex={false}
+			robotsExtras="max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+			keywords={[
+				'Saransh Kawadkar',
+				'Saransh',
+				'saransh-283',
+				'full-stack developer',
+				'software engineer',
+				'web developer portfolio',
+				'React developer',
+				'Next.js developer',
+				'TypeScript',
+				'Node.js',
+				'C++',
+				'Python',
+				'site reliability',
+				'developer tooling',
+				'automation',
+				'freelance web developer India',
+			]}
+			openGraph={{
+				basic: {
+					type,
+					title: ogTitle,
+					image: ogImage,
+					url: canonical,
+				},
+				optional: {
+					description,
+					locale: 'en_US',
+					siteName: SITE_NAME,
+				},
+				image: {
+					type: 'image/jpeg',
+					width: 1200,
+					height: 630,
+					alt: `${ogTitle} — portfolio`,
+				},
+			}}
+			twitter={{
+				card: 'summary_large_image',
+				site: '@saransh',
+				creator: '@saransh',
+				title,
+				description,
+				image: ogImage,
+				imageAlt: `${ogTitle} — portfolio`,
+			}}
+		/>
+
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<link rel="manifest" href="/site.webmanifest" />
+		<link rel="sitemap" href="/sitemap-index.xml" />
+		<link type="text/plain" rel="author" href="/llms.txt" />
+
+		<meta name="googlebot" content="index, follow" />
+		<meta name="theme-color" content="#111827" />
+		<meta name="color-scheme" content="light" />
+		<meta name="author" content="Saransh Kawadkar" />
+		<meta name="publisher" content="Saransh Kawadkar" />
+
+		{schemas.map((schema) => <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />)}
 	</head>
 	<body class="bg-neutral-100 font-sans text-neutral-900 min-h-screen gap-6 flex">
-			<Sidebar />
-			<div class="flex min-w-0 flex-1 flex-col px-4 py-1 lg:px-6">
-				<div class="custom-scrollbar min-h-[calc(100vh-1rem)] overflow-y-scroll rounded-md bg-white px-6 py-10 shadow-sm ring-1 ring-black/5 sm:px-10">
-					<slot />
-				</div>
+		<a
+			href="#main-content"
+			class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-neutral-900 focus:px-4 focus:py-2 focus:text-white"
+		>
+			Skip to main content
+		</a>
+		<Sidebar />
+		<div class="flex min-w-0 flex-1 flex-col px-4 py-1 lg:px-6">
+			<div id="main-content" class="custom-scrollbar min-h-[calc(100vh-1rem)] overflow-y-scroll rounded-md bg-white px-6 py-10 shadow-sm ring-1 ring-black/5 sm:px-10" tabindex="-1">
+				<slot />
 			</div>
+		</div>
 	</body>
 </html>

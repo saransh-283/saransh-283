@@ -13,9 +13,29 @@ export async function getStaticPaths() {
 }
 
 const { project } = Astro.props;
+
+const projectSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'SoftwareSourceCode',
+	name: project.data.title,
+	description: project.data.description,
+	url: new URL(`/projects/${project.slug}`, Astro.site).href,
+	image: project.data.thumbnail,
+	codeRepository: project.data.github,
+	programmingLanguage: project.data.technologies,
+	keywords: project.data.tags.join(', '),
+	author: { '@type': 'Person', name: 'Saransh Kawadkar', url: Astro.site?.href },
+};
 ---
 
-<Layout title={`${project.data.title} | Project`}>
+<script is:inline type="application/ld+json" set:html={JSON.stringify(projectSchema)} />
+
+<Layout
+	title={`${project.data.title} | Saransh Kawadkar`}
+	description={project.data.description}
+	image={project.data.banner ?? project.data.thumbnail}
+	type="article"
+>
 	<main class="mx-auto max-w-3xl">
 		<header class="pt-4">
 			<div class="flex flex-wrap items-center gap-3">
