@@ -3,11 +3,14 @@ import Sidebar from '@components/layout/Sidebar.astro';
 import { SEO } from 'astro-seo';
 import "@styles/global.css";
 import '@fontsource/cal-sans';
+import '@fontsource/inconsolata/400.css';
+import '@fontsource/inconsolata/600.css';
+import '@fontsource/inconsolata/700.css';
 
-const SITE = 'https://saranshkawadkar.com';
-const SITE_NAME = 'Saransh Kawadkar — Software Engineer & Full-Stack Developer';
+const SITE = 'https://saranshkawadkar.dev';
+const SITE_NAME = 'Saransh Kawadkar — Software Engineer who ships';
 const DEFAULT_DESCRIPTION =
-	'Portfolio of Saransh Kawadkar — full-stack software engineer building reliable web systems, developer tooling, and automation with React, Next.js, Node.js, TypeScript, and C++. Browse featured projects, tech stack, and services.';
+	"Hi, I'm Saransh — a full-stack software engineer who turns messy ideas into fast, reliable software. Wander through my builds, what I can do for you, and — if you're feeling generous — a support page.";
 const DEFAULT_OG_IMAGE = `${SITE}/og.jpg`;
 
 export interface LayoutProps {
@@ -18,7 +21,7 @@ export interface LayoutProps {
 }
 
 const {
-	title = 'Saransh Kawadkar | Full-Stack Software Engineer & Web Developer',
+	title = 'Saransh Kawadkar — Software Engineer who ships',
 	description = DEFAULT_DESCRIPTION,
 	image = DEFAULT_OG_IMAGE,
 	type = 'website',
@@ -27,7 +30,7 @@ const {
 const url = new URL(Astro.url.pathname, SITE).href;
 const canonical = url.replace(/\/?$/, '/');
 const ogImage = image.startsWith('http') ? image : new URL(image, SITE).href;
-const ogTitle = title.split(' | ')[0].trim();
+const ogTitle = title.trim();
 
 const personSchema = {
 	'@context': 'https://schema.org',
@@ -64,7 +67,7 @@ const websiteSchema = {
 const breadcrumbs = Astro.url.pathname !== '/' && {
 	'@context': 'https://schema.org',
 	'@type': 'BreadcrumbList',
-	itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: SITE }, { '@type': 'ListItem', position: 2, name: title.split('|')[0].trim(), item: url }],
+	itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: SITE }, { '@type': 'ListItem', position: 2, name: title, item: url }],
 };
 
 const schemas = [personSchema, websiteSchema, ...(breadcrumbs ? [breadcrumbs] : [])];
@@ -73,10 +76,23 @@ const schemas = [personSchema, websiteSchema, ...(breadcrumbs ? [breadcrumbs] : 
 <!doctype html>
 <html lang="en" class="scroll-smooth" data-testid="html">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="generator" content={Astro.generator} />
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="generator" content={Astro.generator} />
+
+	<script is:inline>
+		(function () {
+			var stored = null;
+			try {
+				stored = localStorage.getItem('theme');
+			} catch (e) {}
+			var dark = stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+			var root = document.documentElement;
+			root.classList.toggle('dark', dark);
+			root.style.colorScheme = dark ? 'dark' : 'light';
+		})();
+	</script>
 
 		<SEO
 			title={title}
@@ -84,24 +100,6 @@ const schemas = [personSchema, websiteSchema, ...(breadcrumbs ? [breadcrumbs] : 
 			canonical={canonical}
 			noindex={false}
 			robotsExtras="max-image-preview:large, max-snippet:-1, max-video-preview:-1"
-			keywords={[
-				'Saransh Kawadkar',
-				'Saransh',
-				'saransh-283',
-				'full-stack developer',
-				'software engineer',
-				'web developer portfolio',
-				'React developer',
-				'Next.js developer',
-				'TypeScript',
-				'Node.js',
-				'C++',
-				'Python',
-				'site reliability',
-				'developer tooling',
-				'automation',
-				'freelance web developer India',
-			]}
 			openGraph={{
 				basic: {
 					type,
@@ -139,25 +137,83 @@ const schemas = [personSchema, websiteSchema, ...(breadcrumbs ? [breadcrumbs] : 
 		<link type="text/plain" rel="author" href="/llms.txt" />
 
 		<meta name="googlebot" content="index, follow" />
-		<meta name="theme-color" content="#111827" />
-		<meta name="color-scheme" content="light" />
+		<meta name="theme-color" content="#f0f3f9" />
 		<meta name="author" content="Saransh Kawadkar" />
 		<meta name="publisher" content="Saransh Kawadkar" />
 
 		{schemas.map((schema) => <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />)}
 	</head>
-	<body class="bg-neutral-100 font-sans text-neutral-900 min-h-screen gap-6 flex">
+	<body class="dot-grid bg-cream font-sans text-ink min-h-screen">
 		<a
 			href="#main-content"
-			class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-neutral-900 focus:px-4 focus:py-2 focus:text-white"
+			class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:text-white"
 		>
 			Skip to main content
 		</a>
-		<Sidebar />
-		<div class="flex min-w-0 flex-1 flex-col px-4 py-1 lg:px-6">
-			<div id="main-content" class="custom-scrollbar min-h-[calc(100vh-1rem)] overflow-y-scroll rounded-md bg-white px-6 py-10 shadow-sm ring-1 ring-black/5 sm:px-10" tabindex="-1">
-				<slot />
+		<div class="flex min-h-screen items-stretch">
+			<Sidebar />
+			<div class="flex min-w-0 flex-1 flex-col">
+				<main id="main-content" class="flex-1 px-6 py-10 sm:px-10 md:px-14" tabindex="-1">
+					<slot />
+				</main>
+				<footer class="flex flex-col items-center justify-between gap-1 border-t border-neutral-200/70 px-6 py-4 text-xs text-neutral-400 font-monospace sm:flex-row sm:px-14">
+					<span>&copy; 2026 Saransh Kawadkar</span>
+					<span>&gt;&gt; made with <span class="text-primary">&hearts;</span> and slightly too many open tabs</span>
+				</footer>
 			</div>
 		</div>
 	</body>
 </html>
+
+<script>
+	const revealTargets = document.querySelectorAll<HTMLElement>('.reveal');
+
+	const show = (el: HTMLElement, delayMs = 0) => {
+		el.style.setProperty('--reveal-delay', `${delayMs}ms`);
+		el.classList.add('reveal-in');
+		el.classList.remove('reveal-out');
+		// Drop the stagger once it has played so hover transitions stay snappy.
+		if (delayMs > 0) {
+			window.setTimeout(() => {
+				if (el.classList.contains('reveal-in')) el.style.setProperty('--reveal-delay', '0ms');
+			}, delayMs + 600);
+		}
+	};
+
+	const hide = (el: HTMLElement, exitedViaTop: boolean) => {
+		// Leaving through the top of the viewport: slide back up and fade.
+		// Leaving through the bottom (scrolled back up too far): slide back down and fade.
+		el.style.setProperty('--reveal-delay', '0ms');
+		el.classList.remove('reveal-in');
+		el.classList.toggle('reveal-out', exitedViaTop);
+	};
+
+	if ('IntersectionObserver' in window) {
+		let firstFrame = true;
+		let firstBatchIndex = 0;
+
+		const observer = new IntersectionObserver(
+			(entries) => {
+				for (const entry of entries) {
+					const el = entry.target as HTMLElement;
+
+					if (entry.isIntersecting) {
+						// Elements visible on first paint get a staggered entrance, like the homepage.
+						show(el, firstFrame ? Math.min(firstBatchIndex++ * 70, 350) : 0);
+					} else {
+						const viewportMiddle = (entry.rootBounds?.top ?? 0) + (entry.rootBounds?.height ?? window.innerHeight) / 2;
+						hide(el, entry.boundingClientRect.top < viewportMiddle);
+					}
+				}
+				firstFrame = false;
+			},
+			{ rootMargin: '0px 0px -40px 0px', threshold: 0.05 }
+		);
+
+		revealTargets.forEach((el) => observer.observe(el));
+	} else {
+		revealTargets.forEach((el) => {
+			el.classList.add('reveal-in');
+		});
+	}
+</script>

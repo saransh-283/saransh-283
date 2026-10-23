@@ -2,22 +2,22 @@
 
 > Saransh Kawadkar is a full-stack software engineer who designs and builds reliable web systems, developer tooling, and automation using React, Next.js, Node.js, TypeScript, Python, and C++. This page lists the site's content in a machine- and LLM-friendly format.
 
-- [Home](https://saranshkawadkar.com/): Overview of Saransh Kawadkar, featured projects, and tech stack.
-- [About](https://saranshkawadkar.com/about): Background, experience, and work philosophy.
-- [Projects](https://saranshkawadkar.com/projects): Full list of engineering and product projects.
-- [Services](https://saranshkawadkar.com/services): Engineering services offered for hire.
+- [Home](https://saranshkawadkar.dev/): Overview of Saransh Kawadkar, featured projects, and tech stack.
+- [About](https://saranshkawadkar.dev/about): Background, experience, and work philosophy.
+- [Projects](https://saranshkawadkar.dev/projects): Full list of engineering and product projects.
+- [Services](https://saranshkawadkar.dev/services): Engineering services offered for hire.
 
 ## Projects
 
-- [3DMGV](https://saranshkawadkar.com/projects/3d-mgv): Linux-first toolchain that converts videos into textured 3D models with OpenMVG/OpenMVS and Python automation.
-- [INRT](https://saranshkawadkar.com/projects/inrt): Solana-based, blockchain-first banking prototype with a Flutter desktop client and on-chain programs for identity and fixed deposits.
-- [PRPG](https://saranshkawadkar.com/projects/prpg): Procedural RPG prototype in C++ with procedural generation, an OpenGL renderer, and local LLM-driven NPC behaviors.
-- [Slate UI](https://saranshkawadkar.com/projects/slate-ui): UI components / interfaces project.
+- [3DMGV](https://saranshkawadkar.dev/projects/3d-mgv): Linux-first toolchain that converts videos into textured 3D models with OpenMVG/OpenMVS and Python automation.
+- [INRT](https://saranshkawadkar.dev/projects/inrt): Solana-based, blockchain-first banking prototype with a Flutter desktop client and on-chain programs for identity and fixed deposits.
+- [PRPG](https://saranshkawadkar.dev/projects/prpg): Procedural RPG prototype in C++ with procedural generation, an OpenGL renderer, and local LLM-driven NPC behaviors.
+- [Slate UI](https://saranshkawadkar.dev/projects/slate-ui): UI components / interfaces project.
 
 ## Services
 
-- [Web systems](https://saranshkawadkar.com/services/web-systems): End-to-end web application design, architecture, and delivery.
-- [Application development](https://saranshkawadkar.com/services/application-development): Cross-platform and desktop application development.
-- [Engineering systems and tooling](https://saranshkawadkar.com/services/engineering-systems-and-tooling): CI/CD, build pipelines, automation, and developer tooling.
-- [Engineering problem solving](https://saranshkawadkar.com/services/engineering-problem-solving): Debugging hard problems, performance work, and architectural guidance.
-- [Test automation](https://saranshkawadkar.com/services/test-automation): Automated testing strategies, E2E suites, and quality gates.
+- [Web systems](https://saranshkawadkar.dev/services/web-systems): End-to-end web application design, architecture, and delivery.
+- [Application development](https://saranshkawadkar.dev/services/application-development): Cross-platform and desktop application development.
+- [Engineering systems and tooling](https://saranshkawadkar.dev/services/engineering-systems-and-tooling): CI/CD, build pipelines, automation, and developer tooling.
+- [Engineering problem solving](https://saranshkawadkar.dev/services/engineering-problem-solving): Debugging hard problems, performance work, and architectural guidance.
+- [Test automation](https://saranshkawadkar.dev/services/test-automation): Automated testing strategies, E2E suites, and quality gates.

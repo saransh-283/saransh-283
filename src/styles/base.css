@@ -1,0 +1,65 @@
+/* ----------------------------- */
+/* Base styles                   */
+/* ----------------------------- */
+@layer base {
+  html,
+  body {
+    min-height: 100%;
+  }
+
+  body {
+    background: var(--color-cream);
+    color: #111827;
+    font-family: var(--font-monospace);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  /* Visible focus ring for keyboard users */
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  .custom-scrollbar {
+    scrollbar-color: var(--color-primary) #eef2f8;
+    scrollbar-width: thin;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #eef1f7;
+    border-radius: 999px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border: 2px solid #eef2f8;
+    border-radius: 999px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: var(--color-deep);
+  }
+
+  h2 {
+    font-weight: 700;
+  }
+}

@@ -77,4 +77,4 @@ Allow: /
 User-agent: Download ninja
 Disallow: /
 
-Sitemap: https://saranshkawadkar.com/sitemap-index.xml
+Sitemap: https://saranshkawadkar.dev/sitemap-index.xml

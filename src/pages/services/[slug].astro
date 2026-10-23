@@ -1,5 +1,6 @@
 ---
 import Tag from '@components/ui/Tag.astro';
+import Terminal from '@components/ui/Terminal.astro';
 import Layout from '@layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
@@ -12,6 +13,16 @@ export async function getStaticPaths() {
 }
 
 const { service } = Astro.props;
+
+const terminalLines = [
+	{ kind: 'cmd', text: `service-info --name "${service.data.title}"` },
+	{ kind: 'out', text: 'status: available · response < 48h' },
+	{ kind: 'cmd', text: 'cat ~/what-that-looks-like' },
+	...(service.data.typicalWork ?? []).map((item: string) => ({ kind: 'out', text: item })),
+	...(service.data.deliverables ?? []).length > 0 ? [{ kind: 'cmd', text: 'cat ~/what-you-get' }] : [],
+	...(service.data.deliverables ?? []).map((item: string) => ({ kind: 'out', text: `[x] ${item}` })),
+	{ kind: 'cmd', text: '' },
+];
 
 const serviceSchema = {
 	'@context': 'https://schema.org',
@@ -28,57 +39,66 @@ const serviceSchema = {
 <script is:inline type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
 
 <Layout
-	title={`${service.data.title} | Saransh Kawadkar`}
-	description={`${service.data.summary} Engineering service offered by Saransh Kawadkar.`}
-	image={service.data.thumbnail}
+	title={`Saransh — ${service.data.title}`}
+	description={service.data.summary}
 	type="article"
 >
 	<main class="mx-auto max-w-3xl">
-		<header class="pt-4">
-			<div class="flex flex-wrap items-center gap-3">
-				<h1 class="text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl">{service.data.title}</h1>
-				{service.data.featured && (
-					<span class="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-800 ring-1 ring-emerald-100">
-						Featured
-					</span>
-				)}
-			</div>
+		<header class="pt-4 reveal">
+			<p class="font-monospace text-sm text-primary" aria-hidden="true">// service #${service.data.order}</p>
+			<h1 class="mt-2 text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">{service.data.title}</h1>
 			<p class="mt-3 text-sm leading-6 text-neutral-500">{service.data.summary}</p>
+			<Terminal lines={terminalLines} cursor class="mx-auto mt-6 w-full max-w-xl animate-fade-up" />
 		</header>
 
-		<section class="mt-10">
-			<h2 class="text-base font-bold text-neutral-900">What I do</h2>
+		<section class="mt-10 reveal">
+			<h2 class="text-base font-bold text-ink"><span class="mr-2 font-monospace text-xs text-primary">01</span>What I do here</h2>
 			<p class="mt-2 text-sm leading-6 text-neutral-500">{service.data.what}</p>
 		</section>
 
 		{service.data.focus?.length > 0 && (
-			<section class="mt-10">
-				<h2 class="text-base font-bold text-neutral-900">Focus areas</h2>
-				<ul class="mt-2 list-disc space-y-2 pl-5 text-sm text-neutral-500">
-					{service.data.focus.map((item: string) => <li>{item}</li>)}
+			<section class="mt-10 reveal">
+				<h2 class="text-base font-bold text-ink"><span class="mr-2 font-monospace text-xs text-primary">02</span>Where I focus</h2>
+				<ul class="mt-2 space-y-2 text-sm leading-6 text-neutral-500">
+					{service.data.focus.map((item: string) => (
+						<li class="flex items-start gap-2">
+							<span class="mt-0.5 font-monospace text-primary" aria-hidden="true">&raquo;</span>
+							<span>{item}</span>
+						</li>
+					))}
 				</ul>
 			</section>
 		)}
 
 		{service.data.typicalWork?.length > 0 && (
-			<section class="mt-10">
-				<h2 class="text-base font-bold text-neutral-900">Typical work</h2>
-				<ul class="mt-2 list-disc space-y-2 pl-5 text-sm text-neutral-500">
-					{service.data.typicalWork.map((item: string) => <li>{item}</li>)}
+			<section class="mt-10 reveal">
+				<h2 class="text-base font-bold text-ink"><span class="mr-2 font-monospace text-xs text-primary">03</span>What that looks like</h2>
+				<ul class="mt-2 space-y-2 text-sm leading-6 text-neutral-500">
+					{service.data.typicalWork.map((item: string) => (
+						<li class="flex items-start gap-2">
+							<span class="mt-0.5 font-monospace text-primary" aria-hidden="true">&raquo;</span>
+							<span>{item}</span>
+						</li>
+					))}
 				</ul>
 			</section>
 		)}
 
 		{service.data.deliverables?.length > 0 && (
-			<section class="mt-10">
-				<h2 class="text-base font-bold text-neutral-900">Deliverables</h2>
-				<ul class="mt-2 list-disc space-y-2 pl-5 text-sm text-neutral-500">
-					{service.data.deliverables.map((item: string) => <li>{item}</li>)}
+			<section class="mt-10 reveal">
+				<h2 class="text-base font-bold text-ink"><span class="mr-2 font-monospace text-xs text-primary">04</span>What you get</h2>
+				<ul class="mt-2 space-y-2 text-sm leading-6 text-neutral-500">
+					{service.data.deliverables.map((item: string) => (
+						<li class="flex items-start gap-2">
+							<span class="mt-0.5 font-monospace text-emerald-600" aria-hidden="true">[x]</span>
+							<span>{item}</span>
+						</li>
+					))}
 				</ul>
 			</section>
 		)}
 
-		<footer class="mt-10">
+		<footer class="mt-10 reveal">
 			{service.data.tags?.length > 0 && (
 				<div class="flex flex-wrap gap-2">
 					{service.data.tags.map((tag: string) => (
@@ -87,12 +107,24 @@ const serviceSchema = {
 				</div>
 			)}
 
+			<div class="mt-6 rounded-xl bg-white p-4 ring-soft ring-1 card-lift">
+				<p class="font-monospace text-xs text-neutral-400" aria-hidden="true">$ cat /etc/expectations</p>
+				<p class="mt-1 text-sm leading-6 text-neutral-500">No black boxes and no surprise invoices &mdash; you see the plan, the progress, and the root-cause story every step.</p>
+			</div>
+
 			<div class="mt-6 flex flex-wrap gap-3">
 				<a
-					href="/services"
-					class="inline-flex items-center rounded-lg bg-white px-4 py-2 text-sm font-semibold text-neutral-700 ring-1 ring-black/10 hover:bg-neutral-50"
+					href="/contact"
+					class="group inline-flex items-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-sm font-semibold text-white transition duration-300 hover:bg-deep card-lift"
 				>
-					Back
+					Let's talk about it
+				</a>
+				<a
+					href="/services"
+					class="group inline-flex items-center gap-2 rounded-xl bg-white px-4 py-2.5 text-sm font-semibold text-ink ring-1 ring-hard transition duration-300 hover:ring-primary/50"
+				>
+					<span class="transition-transform duration-300 group-hover:-translate-x-1" aria-hidden="true">&larr;</span>
+					All services
 				</a>
 			</div>
 		</footer>

@@ -1,104 +1,9 @@
 @import "tailwindcss";
-
-/* ----------------------------- */
-/* Design Tokens (Theme Layer)   */
-/* ----------------------------- */
-@theme {
-  /* Breakpoints */
-  --breakpoint-xs: 480px;
-  --breakpoint-sm: 640px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 1024px;
-  --breakpoint-xl: 1280px;
-
-  /* Colors */
-  --color-black: #111827; /* gray-900 */
-  --color-white: #fff;
-  --color-orange: #E06330;
-
-  /* Fonts */
-  --font-sans: "Cal Sans", sans-serif;
-  --font-monospace: "Inconsolata", monospace;
-
-  /* Font Sizes */
-  --text-xs: .75rem;
-  --text-sm: .875rem;
-  --text-tiny: .875rem;
-  --text-base: 1rem;
-  --text-lg: 1.125rem;
-  --text-xl: 1.25rem;
-  --text-2xl: 1.5rem;
-  --text-3xl: 1.875rem;
-  --text-4xl: 2.25rem;
-  --text-5xl: 3rem;
-}
-
-/* ----------------------------- */
-/* Base Styles (plugin replacement) */
-/* ----------------------------- */
-@layer base {
-  html,
-  body {
-    height: 100%;
-  }
-
-  body {
-    background: #f5f5f5;
-    color: #111827;
-  }
-
-  a {
-    text-decoration: none;
-  }
-
-  /* Visible focus ring for keyboard users */
-  :focus-visible {
-    outline: 2px solid #2563eb;
-    outline-offset: 3px;
-    border-radius: 4px;
-  }
-
-  .custom-scrollbar {
-    scrollbar-color: #2563eb #f1f5f9;
-    scrollbar-width: thin;
-  }
-
-  .custom-scrollbar::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-  }
-
-  .custom-scrollbar::-webkit-scrollbar-track {
-    background: #f1f5f9;
-    border-radius: 999px;
-  }
-
-  .custom-scrollbar::-webkit-scrollbar-thumb {
-    background: #2563eb;
-    border: 2px solid #f1f5f9;
-    border-radius: 999px;
-  }
-
-  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: #1d4ed8;
-  }
-
-  h2 {
-    font-weight: 700;
-  }
-
-  li {
-  }
-}
-
-/* ----------------------------- */
-/* Dark mode: system preference */
-/* ----------------------------- */
-@media (prefers-color-scheme: dark) {
-  :root {
-    color-scheme: dark;
-  }
-}
+@import "./theme.css";
+@import "./animations.css";
+@import "./base.css";
+@import "./components.css";
+@import "./dark.css";
 
 /* Respect users who prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
@@ -112,5 +17,10 @@
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
   }
 }

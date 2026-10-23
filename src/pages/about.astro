@@ -1,63 +1,107 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import MessageIcon from "@icons/message.astro";
-import Image from "@components/ui/Image.astro";
 
-const photos = [
-  "https://github.com/saransh-283/3d-MGV/blob/main/screenshots/console.png",
-  "https://github.com/saransh-283/inrt/blob/main/screenshots/splash.png",
-  "https://github.com/saransh-283/prpg/blob/main/screenshots/buildings.png",
-  "https://github.com/saransh-283/slate-ui/blob/master/screenshots/chat.png"
+const interests = [
+	"gaming — mostly strategy, occasionally rage",
+	"music while compiling",
+	"reading about systems far more complex than anything I'll ever build",
+	"starting ten side projects and finishing... some",
+];
+
+const facts = [
+	{ label: "currently building", value: "INRT — a Solana banking prototype" },
+	{ label: "favourite stack", value: "React + Node + TypeScript, C++ when it matters" },
+	{ label: "philosophy", value: "ship fast, but never ship broken" },
+	{ label: "kryptonite", value: "untold scope creep and silent race conditions" },
 ];
 ---
 
 <Layout
-	title="About Saransh Kawadkar | Software Engineer & Web Developer"
-	description="Background and experience of Saransh Kawadkar — software engineer focused on web systems, developer tooling, and automation. Work, philosophy, and stacks."
+	title="Saransh — the person behind the commits"
+	description="Who is Saransh Kawadkar? A software engineer who values clarity, ships fast, and has opinions about architecture. Also: gaming, music, and ten unfinished side projects."
 >
   <main class="mx-auto max-w-3xl">
-    <header class="pt-4 text-center">
+    <header class="pt-4 reveal">
       <div class="flex gap-6 justify-center items-center">
-        <div class="h-9 w-9 text-neutral-700">
+        <div class="h-12 w-12 text-primary">
           <MessageIcon className="h-12 w-12" />
         </div>
-        <h1 class="mt-3 text-4xl font-extrabold tracking-tight text-neutral-900">About Me</h1>
       </div>
+      <h1 class="mt-3 text-center text-4xl font-extrabold tracking-tight text-ink">About me</h1>
+      <p class="mx-auto mt-3 max-w-xl text-center text-sm leading-6 text-neutral-500">The human behind the commits &mdash; less resume, more honest.</p>
     </header>
 
     <section class="mt-10">
-      <div class="mx-auto flex max-w-2xl items-center justify-center gap-6">
-        {photos.map((src, idx) => <Image src={src + "?raw=true"} alt={`About photo ${idx + 1}`} containerClass={`h-40 w-28 rounded-xl sm:h-44 sm:w-32 ${idx === 0 ? "-rotate-6" : idx === 1 ? "-rotate-2" : idx === 2 ? "rotate-2" : idx === 3 ? "rotate-6" : ""}`} imgClass={`h-full w-full rounded-xl object-cover shadow-sm ring-1 ring-black/5`} />)}
+      <div class="mx-auto max-w-2xl space-y-5 text-sm leading-6 text-neutral-500">
+        <p class="reveal">Most days, my job is reducing chaos. Someone hands me a vague idea or a messy codebase, and I turn it into something coherent, predictable, and — crucially — extendable by the next poor soul (usually me, three weeks later).</p>
+
+        <p class="reveal">I move freely across the layers of a system, from what the user sees down to the machinery that keeps it alive. That perspective makes trade-offs loud and early: what to automate, what to configure, and what deserves to stay simple forever.</p>
+
+        <p class="reveal">A recurring theme in my work is orchestration — getting independent parts to cooperate without stepping on each other. Data flowing through a pipeline, state evolving over time, components negotiating responsibility: I like making all of it explicit and debuggable.</p>
+
+        <p class="reveal">I like projects that blur boundaries: tools that feel like products, products that feel like platforms, experiments that accidentally turn serious. Speed matters to me — I move fast, but I don't abandon quality to do it, and I stick it out when a project genuinely deserves the months. The trick is knowing which projects are which.</p>
+
+        <p class="reveal">Above all, I value clarity. Clear interfaces, clear failure modes, clear intent in code. Software ages fast — the goal is to leave something behind that still makes sense when everyone's forgotten why it was built.</p>
       </div>
+    </section>
 
-      <div class="mx-auto mt-10 max-w-2xl space-y-5 text-sm leading-6 text-neutral-500">
-        <p>I approach development as an exercise in reducing chaos. I enjoy taking vague ideas, half-formed requirements, or messy codebases and shaping them into something coherent, predictable, and extensible. Structure matters - not for elegance points, but because future work depends on it.</p>
-
-<p>I'm comfortable moving across layers of a system, from user-facing behavior down to the machinery that makes it reliable. That perspective makes trade-offs clearer: what should be automated, what should be configurable, and what should be left deliberately simple.</p>
-
-<p>A recurring theme in my work is orchestration - getting independent parts to cooperate without stepping on each other. Whether it's data flowing through a pipeline, state evolving over time, or components negotiating responsibility, I focus on making interactions explicit and debuggable.</p>
-
-<p>I like projects that blur boundaries: tools that feel like products, products that feel like platforms, and experiments that accidentally turn serious. Exploration is part of the process, but I'm disciplined about turning experiments into maintainable systems rather than one-off demos.</p>
-
-<p>Above all, I value clarity - clear interfaces, clear failure modes, clear intent in code. Software ages quickly; the goal is to leave behind something that still makes sense when context is gone and assumptions have shifted.</p>
+    <section class="mt-12 reveal">
+      <div class="mx-auto max-w-2xl">
+        <h2 class="text-lg font-extrabold text-ink">Quick facts</h2>
+        <div class="terminal mt-4">
+          <div class="terminal-bar">
+            <span class="h-3 w-3 rounded-full bg-red-400"></span>
+            <span class="h-3 w-3 rounded-full bg-amber-300"></span>
+            <span class="h-3 w-3 rounded-full bg-emerald-400"></span>
+            <span class="ml-2 font-monospace text-xs text-[#8f97a5]">saransh@workstation ~ %</span>
+          </div>
+          <div class="terminal-body">
+            <div><span class="text-sky">$</span> <span class="text-sky">cat ~/facts.txt</span></div>
+            {facts.map((fact) => (
+              <div class="flex flex-col gap-0.5 py-0.5 sm:flex-row sm:gap-4">
+                <span class="w-40 shrink-0 text-sky">{fact.label}:</span>
+                <span class="text-[#c8cdd6]">{fact.value}</span>
+              </div>
+            ))}
+            <div class="mt-2"><span class="text-sky">$</span> <span class="animate-blink text-sky" aria-hidden="true">▌</span></div>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="mx-auto mt-8 flex max-w-2xl flex-wrap gap-3">
+    <section class="mt-12 reveal">
+      <div class="mx-auto max-w-2xl">
+        <h2 class="text-lg font-extrabold text-ink">Beyond code</h2>
+        <p class="mt-1 text-sm text-neutral-500">Things that keep the brain from rusting</p>
+        <ul class="mt-4 space-y-2">
+          {interests.map((item, i) => (
+            <li class="reveal card-lift flex items-start gap-3 rounded-xl bg-neutral-50 px-4 py-3 text-sm leading-6 text-neutral-700 ring-1 ring-soft" style={`--reveal-delay: ${(0.06 * i).toFixed(2)}s;`}>
+              <span class="mt-0.5 font-monospace text-primary" aria-hidden="true">*</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <section class="mt-12 pb-4">
+      <div class="mx-auto flex max-w-2xl flex-wrap gap-3 reveal">
         <a
           href="/Resume-Saransh_Kawadkar-Full_Stack.pdf"
           download
-          class="inline-flex items-center rounded-lg bg-blue-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+          class="inline-flex items-center rounded-xl bg-primary px-4 py-2.5 text-sm font-semibold text-white transition duration-300 hover:bg-deep card-lift"
         >
-          Download resume
+          Grab my resume
         </a>
         <button
           type="button"
           id="resume-toggle"
           aria-expanded="false"
           aria-controls="resume-viewer"
-          class="inline-flex items-center rounded-lg bg-neutral-100 px-4 py-2 text-sm font-semibold text-neutral-900 ring-1 ring-inset ring-neutral-300 transition hover:bg-neutral-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+          class="inline-flex items-center rounded-xl bg-white px-4 py-2.5 text-sm font-semibold text-ink ring-1 ring-hard transition duration-300 hover:ring-primary/50"
         >
-          View resume
+          <span data-testid="resume-toggle-label">Peek at my resume</span>
         </button>
       </div>
 
@@ -65,12 +109,12 @@ const photos = [
         <object
           data="/Resume-Saransh_Kawadkar-Full_Stack.pdf#zoom=page-width&sidebar=0"
           type="application/pdf"
-          class="h-[70vh] min-h-[32rem] w-full rounded-lg border border-neutral-200 bg-neutral-50"
+          class="h-[70vh] min-h-[32rem] w-full animate-fade-up rounded-xl border border-neutral-200 bg-neutral-50"
           aria-label="Resume PDF viewer"
         >
           <p class="p-5 text-sm text-neutral-600">
             Your browser cannot display PDFs inline.
-            <a class="font-semibold text-blue-700 underline" href="/Resume-Saransh_Kawadkar-Full_Stack.pdf#zoom=page-width&sidebar=0" target="_blank" rel="noopener">Open the resume</a>.
+            <a class="font-semibold text-primary underline" href="/Resume-Saransh_Kawadkar-Full_Stack.pdf#zoom=page-width&sidebar=0" target="_blank" rel="noopener">Open the resume</a>.
           </p>
         </object>
       </div>
@@ -83,10 +127,11 @@ const photos = [
   const resumeViewer = document.getElementById('resume-viewer');
 
   resumeToggle?.addEventListener('click', () => {
-    const isOpen = resumeToggle.getAttribute('aria-expanded') === 'true';
-    resumeToggle.setAttribute('aria-expanded', String(!isOpen));
-    resumeViewer?.classList.toggle('hidden', isOpen);
-    resumeViewer?.setAttribute('aria-hidden', String(isOpen));
-    resumeToggle.textContent = isOpen ? 'View resume' : 'Hide resume';
+    const isHidden = resumeViewer?.classList.contains('hidden') ?? true;
+    resumeViewer?.classList.toggle('hidden', !isHidden);
+    resumeViewer?.setAttribute('aria-hidden', String(!isHidden));
+    resumeToggle.setAttribute('aria-expanded', String(isHidden));
+    const label = resumeToggle.querySelector('[data-testid="resume-toggle-label"]');
+    if (label) label.textContent = isHidden ? 'Hide resume' : 'Peek at my resume';
   });
 </script>

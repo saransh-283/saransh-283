@@ -1,0 +1,93 @@
+/* ----------------------------- */
+/* Reusable component utilities  */
+/* ----------------------------- */
+@layer components {
+  /* Fine dot grid backdrop, subtle so it stays friendly */
+  .dot-grid {
+    background-image: radial-gradient(#1869b40f 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+
+  /* Hand-annotated marker highlight, like a highlighter pen */
+  .marker-highlight {
+    background-image: linear-gradient(transparent 62%, #cfe3f833 62%, #1869b433 88%, transparent 88%);
+  }
+
+  /* Keyboard keycap */
+  .kbd {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--font-monospace);
+    font-size: .7em;
+    font-weight: 600;
+    padding: .14em .5em;
+    border-radius: .375rem;
+    border: 1px solid var(--hard);
+    border-bottom-width: 2px;
+    background: #ffffffcc;
+    color: var(--color-ink);
+  }
+
+  /* Terminal-style chrome (stays dark in both themes on purpose) */
+  .terminal {
+    border-radius: .75rem;
+    border: 1px solid #11182714;
+    background: #16181d;
+    color: #e7e4df;
+    font-family: var(--font-monospace);
+  }
+
+  .terminal-bar {
+    display: flex;
+    align-items: center;
+    gap: .375rem;
+    padding: .55rem .75rem;
+    border-bottom: 1px solid #ffffff14;
+  }
+
+  .terminal-body {
+    padding: .9rem 1rem;
+    font-size: .8rem;
+    line-height: 1.7;
+  }
+
+  /* Card with a squishy hover motion */
+  .card-lift {
+    transition: transform .3s cubic-bezier(.22, 1, .36, 1), box-shadow .3s cubic-bezier(.22, 1, .36, 1);
+    will-change: transform;
+  }
+
+  .card-lift:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px -6px #1118271a;
+  }
+
+  /* Semantic hairline rings (replace ring-black/x so dark mode works) */
+  .ring-soft {
+    --tw-ring-color: var(--soft);
+  }
+
+  .ring-hard {
+    --tw-ring-color: var(--hard);
+  }
+
+  /* Scroll-reveal: slides in when entering the viewport, slides out when leaving.
+     Direction state classes are added by the observer in Layout.astro. */
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity .55s ease-out, transform .55s cubic-bezier(.22, 1, .36, 1);
+    transition-delay: var(--reveal-delay, 0s);
+    will-change: opacity, transform;
+  }
+
+  .reveal.reveal-in {
+    opacity: 1;
+    transform: none;
+  }
+
+  .reveal.reveal-out {
+    opacity: 0;
+    transform: translateY(-18px);
+  }
+}

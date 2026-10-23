@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 import icon from "astro-icon";
 import tailwindcss from '@tailwindcss/vite';
 
-const SITE_URL = 'https://saranshkawadkar.com';
+const SITE_URL = 'https://saranshkawadkar.dev';
 
 // https://astro.build/config
 export default defineConfig({

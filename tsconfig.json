@@ -15,15 +15,16 @@
 		"noEmit": true,
 		"strictNullChecks": true,
 		"baseUrl": "src",
-		"paths": {
-			"@lib/*": ["lib/*"],
-			"@utils/*": ["utils/*"],
-			"@components/*": ["components/*"],
-			"@layouts/*": ["layouts/*"],
-			"@assets/*": ["assets/*"],
-			"@icons/*": ["icons/*"],
-			"@pages/*": ["pages/*"],
+ 		"paths": {
+ 			"@lib/*": ["lib/*"],
+ 			"@utils/*": ["utils/*"],
+ 			"@components/*": ["components/*"],
+ 			"@layouts/*": ["layouts/*"],
+ 			"@assets/*": ["assets/*"],
+ 			"@icons/*": ["icons/*"],
+ 			"@pages/*": ["pages/*"],
+ 			"@data/*": ["data/*"],
       "@styles/*": ["styles/*"]
-		}
+ 		}
 	}
 }

@@ -1,0 +1,57 @@
+/* ----------------------------- */
+/* Searchable tokens (Theme Layer) */
+/* ----------------------------- */
+@theme {
+  /* Breakpoints */
+  --breakpoint-xs: 480px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+
+  /* Colors */
+  --color-black: #111827; /* gray-900 */
+  --color-white: #fbfcfe; /* off-white with a hint of blue, easier on the eyes */
+  --color-primary: #1869B4;
+  --color-deep: #134F86;
+  --color-sky: #5AA9E6;
+  --color-ink: #16181d;
+  --color-cream: #f0f3f9;
+
+  /* Fonts */
+  --font-sans: "Inconsolata", monospace;
+  --font-display: "Cal Sans", sans-serif;
+  --font-monospace: "Inconsolata", monospace;
+
+  /* Font Sizes */
+  --text-xs: .75rem;
+  --text-sm: .875rem;
+  --text-tiny: .875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+
+  /* Animation tokens */
+  --animate-fade-up: fade-up .5s cubic-bezier(.22, 1, .36, 1) both;
+  --animate-fade-in: fade-in .4s ease-out both;
+  --animate-blink: blink 1.1s steps(2, start) infinite;
+  --animate-marquee: marquee 28s linear infinite;
+  --animate-float: float 4s ease-in-out infinite;
+  --animate-wiggle: wiggle .5s ease-in-out;
+}
+
+/* Semantic hairline ring colors (theme-aware via dark.css) */
+:root {
+  --soft: #11182708;
+  --hard: #1118271a;
+
+  /* Light-mode neutrals get the same cool tint as the shell */
+  --color-neutral-50: #f7f9fd;
+  --color-neutral-100: #f1f4fa;
+
+  color-scheme: light;
+}

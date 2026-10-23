@@ -18,56 +18,131 @@ const technologies = [
 ---
 
 <Layout
-	title="Saransh Kawadkar | Full-Stack Software Engineer & Web Developer"
-	description="Portfolio of Saransh Kawadkar — full-stack software engineer building reliable web systems, developer tooling, and automation with React, Next.js, Node.js, TypeScript, and C++. Browse featured projects, tech stack, and services."
+	title="Saransh — I build fast, honest software"
+	description="Hi, I'm Saransh — full-stack engineer, tinkerer of engines, and occasional Solana wrangler. Peek at my builds and say hi."
 >
 	<main class="mx-auto max-w-3xl">
-		<section class="pt-4">
-			<div class="flex items-center gap-2">
-				<div class="text-2xl">👋</div>
-				<h1 class="text-center text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl">
-					Hello there! I'm Saransh
-				</h1>
+		<section class="pt-4 reveal">
+			<p class="font-monospace text-sm text-primary animate-fade-up" aria-hidden="true">// hi, thanks for stopping by</p>
+			<h1 class="mt-3 text-3xl font-extrabold tracking-tight text-ink animate-fade-up sm:text-4xl" style="animation-delay:.08s">
+				Hello there! I'm Saransh —
+				<br />
+				<span class="text-primary" data-testid="typewriter" id="typewriter" aria-live="polite">developer</span><span class="animate-blink font-monospace text-primary" aria-hidden="true">_</span>
+			</h1>
+			<p class="mt-4 max-w-2xl text-sm leading-6 text-neutral-500" style="animation: fade-up .5s cubic-bezier(.22,1,.36,1) .16s both;">
+				I like turning vague, messy ideas into software that actually works — fast to build, easy to live with, and boring in all the right places when something breaks at 2am.
+			</p>
+			<p class="mt-3 max-w-2xl text-sm leading-6 text-neutral-500" style="animation: fade-up .5s cubic-bezier(.22,1,.36,1) .24s both;">
+				Low-level engines or high-level interfaces — I hop between layers depending on the problem, because sometimes the bug hides where you're not looking.
+			</p>
+			<div class="mt-6 flex flex-wrap gap-3">
+				<a
+					href="/projects"
+					class="group inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-2.5 text-sm font-semibold text-white transition duration-300 hover:bg-deep card-lift"
+				>
+					See the builds
+					<ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+				</a>
+				<a
+					href="/support"
+					class="group inline-flex items-center gap-2 rounded-xl bg-white px-5 py-2.5 text-sm font-semibold text-ink ring-1 ring-hard transition duration-300 hover:ring-primary/50 card-lift"
+					>
+					Leave a tip <span aria-hidden="true" class="text-primary transition-transform duration-300 group-hover:scale-110">&hearts;</span>
+				</a>
 			</div>
-			<p class="mt-4 max-w-2xl text-sm leading-6 text-neutral-500">
-				I design and build systems that value clarity, correctness, and long-term maintainability. Clean abstractions, sharp edges, and workflows that hold up under pressure, are what I strive for in my work.
-			</p>
-			<p class="mt-3 max-w-2xl text-sm leading-6 text-neutral-500">
-				I'm drawn to problems where architecture matters as much as execution. From low-level engines to high-level interfaces, I enjoy turning messy ideas into coherent, dependable software.
-			</p>
-			<p class="mt-3 max-w-2xl text-sm leading-6 text-neutral-500">
-				My work lives at the intersection of infrastructure, product thinking, and experimentation, where curiosity is allowed to get its hands dirty.
-			</p>
 		</section>
 
 		<section class="mt-12">
-			<h2 class="text-lg font-extrabold text-neutral-900">Featured Projects</h2>
+			<div class="terminal reveal">
+				<div class="terminal-bar">
+					<span class="h-3 w-3 rounded-full bg-red-400"></span>
+					<span class="h-3 w-3 rounded-full bg-amber-300"></span>
+					<span class="h-3 w-3 rounded-full bg-emerald-400"></span>
+					<span class="ml-2 font-monospace text-xs text-[#8f97a5]">saransh@workstation ~ %</span>
+				</div>
+				<div class="terminal-body">
+					<div><span class="text-sky">$</span> whoami</div>
+					<div class="text-[#c8cdd6]">Saransh Kawadkar &mdash; full-stack engineer, based on the edge of chaos and production</div>
+					<div class="mt-2"><span class="text-sky">$</span> current_project</div>
+					<div class="text-[#c8cdd6]">INRT &mdash; a Solana banking prototype &middot; <span class="text-primary">in progress</span></div>
+					<div class="mt-2"><span class="text-sky">$</span> uptime --human</div>
+					<div class="text-[#c8cdd6]">shipping fast, learning faster, test suite mostly green</div>
+					<div class="mt-2"><span class="text-sky">$</span> <span class="animate-blink" aria-hidden="true">▌</span></div>
+				</div>
+			</div>
+		</section>
+
+		<section class="mt-12 reveal">
+			<h2 class="text-lg font-extrabold text-ink">
+				Things I'm proud of
+				<span class="ml-2 font-monospace text-xs font-normal text-neutral-400">featured</span>
+			</h2>
 			<div class="mt-6 space-y-8">
-				{projects.filter((project) => project.data.featured).map((project) => (
+				{projects.filter((project) => project.data.featured).map((project, i) => (
 					<ProjectRow
 						title={project.data.title}
 						description={project.data.description}
 						href={`/projects/${project.slug}`}
 						thumbnail={project.data.thumbnail}
 						tags={project.data.tags}
+						inProgress={project.data.inProgress}
+						delay={0.08 * (i + 1)}
 					/>
 				))}
 			</div>
-			<a href="/projects" class="mt-6 flex justify-center items-center gap-6 text-gray-700">
-				<div>View All Projects</div>
-				<ArrowRight className="h-5 w-5" />
+			<a
+				href="/projects"
+				class="mt-6 flex items-center justify-center gap-2 text-sm text-gray-700 transition-colors duration-200 hover:text-ink"
+			>
+				<span class="border-b border-dashed border-gray-400 pb-0.5 transition-colors duration-200 group-hover:border-ink">View all projects</span>
+				<ArrowRight className="h-4 w-4 transition-transform duration-300 hover:translate-x-1" />
 			</a>
 		</section>
 
-		<section class="mt-12">
-			<h2 class="text-lg font-extrabold text-neutral-900">Tech Stack</h2>
-			<h3 class="truncate text-base font-semibold text-neutral-900">Primary technologies I work with</h3>
-				<p class="mt-1 line-clamp-2 text-sm text-neutral-500">A snapshot of the tools I reach for most often</p>
-			<div class="mt-5 flex flex-wrap items-center gap-5 text-neutral-400 text-xl">
-				{technologies.map((tech) => (
-					<Image src={tech.icon} alt={`${tech.name} icon`} containerClass='h-16 w-16' />
-				))}
+		<section class="mt-12 reveal">
+			<h2 class="text-lg font-extrabold text-ink">Tools of the trade</h2>
+			<p class="mt-1 text-sm text-neutral-500">The stuff I reach for most often — rotating roster, like a coffee order</p>
+			<div class="mt-5 grid grid-cols-3 gap-4 sm:grid-cols-6">
+			{technologies.map((tech, i) => (
+				<div class="flex flex-col items-center gap-2 text-center" style={`animation: fade-up .5s cubic-bezier(.22,1,.36,1) ${(0.05 * i).toFixed(2)}s both;`}>
+					<Image src={tech.icon} alt={`${tech.name} icon`} containerClass="h-14 w-14 rounded-xl bg-white ring-1 ring-soft p-2" imgClass="object-contain" />
+					<span class="font-monospace text-xs text-neutral-500">{tech.name}</span>
+				</div>
+			))}
 			</div>
 		</section>
 	</main>
 </Layout>
+
+<script>
+	const el = document.getElementById('typewriter');
+	const phrases = ['developer', 'solver', 'explorer', 'night owl', 'engine tinkerer'];
+
+	if (el && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+		let phrase = 0;
+		let pos = phrases[0].length;
+		let dir = -1;
+
+		const tick = () => {
+			const current = phrases[phrase];
+			pos += dir;
+			el.textContent = current.slice(0, Math.max(pos, 0));
+
+			let hold = 80;
+			if (dir === 1 && pos >= current.length) {
+				dir = -1;
+				hold = braceHold();
+			} else if (dir === -1 && pos <= 0) {
+				dir = 1;
+				phrase = (phrase + 1) % phrases.length;
+				hold = 350;
+			}
+
+			setTimeout(tick, hold);
+		};
+
+		const braceHold = () => 1400;
+
+		setTimeout(tick, 1200);
+	}
+</script>

@@ -1,0 +1,113 @@
+/* ----------------------------- */
+/* Dark theme (class-based)      */
+/* ----------------------------- */
+.dark {
+  color-scheme: dark;
+
+  /* Shell + surfaces */
+  --color-cream: #0f1016;
+  --color-white: #191b22;
+  --color-ink: #e8e6e1;
+
+  /* Neutral scale inversion (text muting reads top-down) */
+  --color-neutral-50: #1e2027;
+  --color-neutral-100: #24262e;
+  --color-neutral-200: #31343d;
+  --color-neutral-300: #4c5058;
+  --color-neutral-400: #8f96a0;
+  --color-neutral-500: #aab1ba;
+  --color-neutral-600: #c3c9d1;
+  --color-neutral-700: #dbe0e6;
+  --color-neutral-900: #f4f5f7;
+
+  /* Grays used by slideshow + skeletons */
+  --color-gray-300: #26282f;
+  --color-gray-400: #646b76;
+  --color-gray-600: #b6bcc5;
+  --color-gray-700: #d8dce1;
+  --color-gray-800: #e9ebee;
+  --color-gray-900: #f4f5f7;
+
+  /* Tinted chip surfaces (amber/emerald washes) */
+  --color-amber-100: #39301a;
+  --color-amber-200: #4a3d1d;
+  --color-amber-800: #ffd98a;
+  --color-emerald-50: #12291f;
+  --color-emerald-100: #173327;
+  --color-emerald-800: #7ee0a8;
+
+  /* Hairlines lighter on dark surfaces */
+  --soft: #ffffff10;
+  --hard: #ffffff1f;
+
+  /* Hover lift reads in the dark */
+  --color-deep: #3d8ed4;
+}
+
+/* Backdrop dots lighter in the dark */
+.dark .dot-grid {
+  background-image: radial-gradient(#5aa9e614 1px, transparent 1px);
+}
+
+/* Terminal gets a lighter edge against dark surfaces */
+.dark .terminal {
+  border-color: #ffffff1a;
+}
+
+.dark .kbd {
+  background: #ffffff0a;
+}
+
+.dark .card-lift:hover {
+  box-shadow: 0 6px 18px -6px #00000080;
+}
+
+.dark .custom-scrollbar {
+  scrollbar-color: var(--color-primary) #1c1e25;
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-track {
+  background: #1c1e25;
+  border-radius: 999px;
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border: 2px solid #1c1e25;
+}
+
+/* Theme toggle icon swap */
+.theme-toggle .icon-sun,
+.theme-toggle .icon-moon {
+  display: none;
+}
+
+.theme-toggle .icon-moon {
+  display: block;
+}
+
+.dark .theme-toggle .icon-sun {
+  display: block;
+}
+
+.dark .theme-toggle .icon-moon {
+  display: none;
+}
+
+/* Don't animate the theme swap wholesale */
+html.theme-pausing *,
+html.theme-pausing *::before,
+html.theme-pausing *::after {
+  transition: none !important;
+}
+
+/* Crossfade the theme swap (property swaps driven by the toggle in Sidebar.astro) */
+html.theme-anim *,
+html.theme-anim *::before,
+html.theme-anim *::after {
+  transition: background-color .4s ease, color .4s ease, border-color .4s ease, fill .4s ease, stroke .4s ease, box-shadow .4s ease !important;
+}
+
+html.theme-anim svg {
+  transition: fill .4s ease, stroke .4s ease !important;
+}

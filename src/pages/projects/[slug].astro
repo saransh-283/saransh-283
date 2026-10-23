@@ -31,74 +31,121 @@ const projectSchema = {
 <script is:inline type="application/ld+json" set:html={JSON.stringify(projectSchema)} />
 
 <Layout
-	title={`${project.data.title} | Saransh Kawadkar`}
+	title={`Saransh — building ${project.data.title}`}
 	description={project.data.description}
 	image={project.data.banner ?? project.data.thumbnail}
 	type="article"
 >
 	<main class="mx-auto max-w-3xl">
-		<header class="pt-4">
-			<div class="flex flex-wrap items-center gap-3">
-				<img src={`${project.data.banner}`} alt={`${project.data.title} banner`} class="h-full w-full rounded-lg object-cover" />
-				<h1 class="text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl">{project.data.title}</h1>
+		<header class="pt-4 reveal">
+			<img src={`${project.data.banner}`} alt={`${project.data.title} banner`} class="w-full animate-fade-up rounded-xl object-cover ring-1 ring-soft" />
+			<div class="mt-6 flex flex-wrap items-center gap-3">
+				<h1 class="text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">{project.data.title}</h1>
 				{project.data.inProgress && (
-					<span class="rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-800 ring-1 ring-amber-200">
-						In progress
+					<span class="rounded-full bg-amber-100 px-3 py-1 font-monospace text-xs font-semibold text-amber-800 ring-1 ring-amber-200">
+						* work in progress
 					</span>
 				)}
 			</div>
 			<p class="mt-3 text-sm leading-6 text-neutral-500">{project.data.description}</p>
 		</header>
 
-		<section class="mt-10">
-			<h2 class="text-base font-bold text-neutral-900">What it is</h2>
+		<section class="mt-10 reveal">
+			<h2 class="text-base font-bold text-ink">The story</h2>
 			<p class="mt-2 text-sm leading-6 text-neutral-500">{project.data.what}</p>
 		</section>
 
-		<section class="mt-10">
-			<h2 class="text-base font-bold text-neutral-900">Features</h2>
-			<ul class="mt-2 list-disc space-y-2 pl-5 text-sm text-neutral-500">
-				{project.data.features.map((feature: string) => <li>{feature}</li>)}
+		<section class="mt-10 reveal">
+			<h2 class="text-base font-bold text-ink">What it can do</h2>
+			<ul class="mt-2 space-y-2 text-sm leading-6 text-neutral-500">
+				{project.data.features.map((feature: string) => (
+					<li class="flex items-start gap-2">
+						<span class="mt-0.5 font-monospace text-emerald-600" aria-hidden="true">[x]</span>
+						<span>{feature}</span>
+					</li>
+				))}
 			</ul>
 		</section>
 
-		<section class="mt-10">
-			<h2 class="text-base font-bold text-neutral-900">Planned</h2>
-			<ul class="mt-2 list-disc space-y-2 pl-5 text-sm text-neutral-500">
-				{project.data.planned.map((item: string) => <li>{item}</li>)}
-			</ul>
-		</section>
+		{project.data.planned?.length > 0 && (
+			<section class="mt-10 reveal">
+				<h2 class="text-base font-bold text-ink">
+					Coming next
+					<span class="ml-1 font-monospace text-xs font-normal text-neutral-400">
+						(<span data-testid="someday-typewriter" id="someday-typewriter" aria-live="polite">someday&hellip;</span><span class="animate-blink" aria-hidden="true">▌</span>)
+					</span>
+				</h2>
+				<ul class="mt-2 space-y-2 pl-5 text-sm leading-6 text-neutral-500">
+					{project.data.planned.map((item: string) => <li class="list-disc">{item}</li>)}
+				</ul>
+			</section>
+		)}
 
-		<section class="mt-10">
-			<h2 class="text-base font-bold text-neutral-900">Technologies</h2>
-			<ul class="mt-2 list-disc space-y-2 pl-5 text-sm text-neutral-500">
-				{project.data.technologies.map((tech: string) => <li>{tech}</li>)}
-			</ul>
-		</section>
+		{project.data.technologies?.length > 0 && (
+			<section class="mt-10 reveal">
+				<h2 class="text-base font-bold text-ink">Built with</h2>
+				<div class="mt-3 flex flex-wrap gap-2">
+					{project.data.technologies.map((tech: string) => <Tag text={tech} />)}
+				</div>
+			</section>
+		)}
 
 		{project.data.screenshots && project.data.screenshots.length > 0 && (
-			<section class="mt-10">
-				<h2 class="text-base font-bold text-neutral-900">Screenshots</h2>
+			<section class="mt-10 reveal">
+				<h2 class="text-base font-bold text-ink">Screenshots</h2>
+				<p class="mt-1 text-xs text-neutral-400">Because every project deserves glamour shots</p>
 				<div class="mt-4">
 					<Slideshow images={project.data.screenshots} />
 				</div>
 			</section>
 		)}
 
-		<footer class="mt-10">
-			<div>
+		<footer class="mt-10 reveal">
+			<div class="flex flex-wrap gap-2">
 				{project.data.tags.map((tag: string) => (
 					<Tag text={tag} />
 				))}
 			</div>
 			<div class="mt-6 flex flex-wrap gap-3">
-				<a href={project.data.github} target="_blank" rel="noopener" class="inline-flex items-center rounded-lg bg-neutral-900 px-4 py-2 text-sm font-semibold text-white hover:bg-neutral-800">
-					View repository
+				<a href={project.data.github} target="_blank" rel="noopener" class="group inline-flex items-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-sm font-semibold text-white transition duration-300 hover:bg-deep card-lift">
+					Star it on GitHub
 				</a>
-				<a href="/projects" class="inline-flex items-center rounded-lg bg-white px-4 py-2 text-sm font-semibold text-neutral-700 ring-1 ring-black/10 hover:bg-neutral-50">
-					Back
+				<a href="/projects" class="group inline-flex items-center gap-2 rounded-xl bg-white px-4 py-2.5 text-sm font-semibold text-ink ring-1 ring-hard transition duration-300 hover:ring-primary/50">
+					<span class="transition-transform duration-300 group-hover:-translate-x-1" aria-hidden="true">&larr;</span>
+					More builds
 				</a>
 			</div>
 		</footer>
 	</main>
 </Layout>
+
+<script>
+	const el = document.getElementById('someday-typewriter');
+	const phrases = ['someday\u2026', 'no promises\u2026', 'next sprint, probably\u2026', 'when the stars align\u2026'];
+
+	if (el && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+		let phrase = 0;
+		let pos = phrases[0].length;
+		let dir = -1;
+
+		const tick = () => {
+			const current = phrases[phrase];
+			pos += dir;
+			el.textContent = current.slice(0, Math.max(pos, 0));
+
+			let hold = 80;
+			if (dir === 1 && pos >= current.length) {
+				dir = -1;
+				hold = 1400;
+			} else if (dir === -1 && pos <= 0) {
+				dir = 1;
+				phrase = (phrase + 1) % phrases.length;
+				hold = 350;
+			}
+
+			setTimeout(tick, hold);
+		};
+
+		setTimeout(tick, 1200);
+	}
+</script>

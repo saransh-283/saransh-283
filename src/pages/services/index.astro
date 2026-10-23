@@ -8,24 +8,44 @@ const services = (await getCollection("services")).sort((a, b) => (a.data.order 
 ---
 
 <Layout
-	title="Services | Saransh Kawadkar"
-	description="Engineering services by Saransh Kawadkar — web systems, application development, engineering tooling, problem solving, and test automation."
+	title="Saransh — how I can help"
+	description="Need a web system built, a codebase un-messified, or bugs hunted down? Saransh Kawadkar can help — web systems, app development, tooling, automation, and stubborn bug hunts."
 >
   <main class="mx-auto max-w-3xl">
-    <header class="pt-4 text-center">
+    <header class="pt-4 reveal">
       <div class="flex gap-6 justify-center items-center">
-        <div class="h-9 w-9 text-emerald-400">
+        <div class="h-12 w-12 text-primary">
           <PuzzleIcon className="h-12 w-12" />
         </div>
-        <h1 class="mt-3 text-4xl font-extrabold tracking-tight text-neutral-900">Services</h1>
       </div>
-      <p class="mx-auto mt-3 max-w-xl text-sm leading-6 text-neutral-500">How I can help you ship faster with fewer bugs.</p>
+      <h1 class="mt-3 text-center text-4xl font-extrabold tracking-tight text-ink">What I can do for you</h1>
+      <p class="mx-auto mt-3 max-w-xl text-center text-sm leading-6 text-neutral-500">Pick a problem, bring it over &mdash; I'll tell you honestly if I'm the right person for it.</p>
     </header>
 
+    <section class="mt-10 reveal" aria-label="How working together goes">
+      <div class="mx-auto flex max-w-2xl flex-wrap items-center justify-center gap-2 font-monospace text-xs sm:gap-3">
+        <span class="animate-fade-up rounded-full bg-neutral-50 px-3 py-1.5 text-neutral-700 ring-soft ring-1">[1] you describe the problem</span>
+        <span class="animate-fade-up text-neutral-300" style="animation-delay:.1s" aria-hidden="true">-&gt;</span>
+        <span class="animate-fade-up rounded-full bg-neutral-50 px-3 py-1.5 text-neutral-700 ring-soft ring-1" style="animation-delay:.2s">[2] I scope it honestly</span>
+        <span class="animate-fade-up text-neutral-300" style="animation-delay:.3s" aria-hidden="true">-&gt;</span>
+        <span class="animate-fade-up rounded-full bg-neutral-50 px-3 py-1.5 text-neutral-700 ring-soft ring-1" style="animation-delay:.4s">[3] we ship it</span>
+      </div>
+    </section>
+
     <section class="mt-10 space-y-8">
-        {services.map((service) => (
-            <ServiceCard href={service.data.href} title={service.data.title} description={service.data.summary} tags={service.data.tags} />
+        {services.map((service, i) => (
+            <ServiceCard href={service.data.href} title={service.data.title} description={service.data.summary} tags={service.data.tags} thumbnail={service.data.thumbnail} delay={0.08 * (i + 1)} />
         ))}
+    </section>
+
+    <section class="mt-10 pb-4 reveal">
+      <a href="/contact" class="group card-lift flex flex-wrap items-center justify-between gap-4 rounded-xl border border-dashed border-primary/40 bg-white px-5 py-4 ring-soft transition duration-300 hover:bg-primary/5">
+        <div>
+          <p class="font-semibold text-ink">Problem doesn't fit a category?</p>
+          <p class="mt-1 text-sm text-neutral-500">Describe it anyway &mdash; I like the weird ones. Worst case, I tell you who to ask instead.</p>
+        </div>
+        <span class="inline-flex items-center gap-2 font-monospace text-xs text-primary transition group-hover:translate-x-1" aria-hidden="true">say hi -&gt;</span>
+      </a>
     </section>
   </main>
 </Layout>

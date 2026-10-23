@@ -1,5 +1,7 @@
 ---
 import EmailIcon from "@icons/email.astro";
+import InstagramIcon from "@icons/instagram.astro";
+import TelegramIcon from "@icons/telegram.astro";
 import Layout from "@layouts/Layout.astro";
 
 const env = import.meta.env;
@@ -10,45 +12,87 @@ const key =
 ---
 
 <Layout
-	title="Contact Saransh Kawadkar | Get in Touch"
-	description="Contact Saransh Kawadkar for projects, collaborations, or freelance engineering work — email, socials, and a quick contact form."
+	title="Saransh — say hi"
+	description="Contact Saransh Kawadkar for projects, collaborations, freelance work, or just to nerd out about architecture — email, socials, and a quick form that actually gets a reply."
 >
   <main class="mx-auto max-w-3xl">
     <header class="pt-4 text-center">
       <div class="flex gap-6 justify-center items-center">
-        <div class="mx-auto h-9 w-9 text-sky-400">
+        <div class="mx-auto h-9 w-9 animate-float text-primary">
           <EmailIcon className="h-9 w-9" />
         </div>
       </div>
-      <h1 class="mt-3 text-4xl font-semibold tracking-tight text-neutral-900">Contact Me</h1>
-      <p class="mx-auto mt-3 max-w-xl text-sm leading-6 text-neutral-500">Reach out to me over email or fill up this contact form. I will get back to you ASAP - I promise.</p>
+      <h1 class="mt-3 text-4xl font-extrabold tracking-tight text-ink">Say hi 👋</h1>
+      <p class="mx-auto mt-3 max-w-xl text-sm leading-6 text-neutral-500">Got a project, a stubborn bug, or just want to argue about tabs vs spaces? Drop a message below — I genuinely read and reply to all of them.</p>
+      <div class="mt-5 flex flex-wrap items-center justify-center gap-2 font-monospace text-xs reveal">
+        <span class="animate-fade-up rounded-full bg-neutral-50 px-3 py-1.5 text-neutral-700 ring-soft ring-1 inline-flex items-center gap-1.5">
+          <span class="relative flex h-1.5 w-1.5">
+            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" aria-hidden="true"></span>
+            <span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500" aria-hidden="true"></span>
+          </span>
+          replies &lt; 48h
+        </span>
+        <span class="animate-fade-up rounded-full bg-neutral-50 px-3 py-1.5 text-neutral-700 ring-soft ring-1" style="animation-delay:.12s">async-friendly</span>
+        <span class="animate-fade-up rounded-full bg-neutral-50 px-3 py-1.5 text-neutral-700 ring-soft ring-1" style="animation-delay:.24s">crash stories welcome</span>
+      </div>
     </header>
 
     <section class="mt-10">
       <form action="https://api.web3forms.com/submit" method="POST" class="mx-auto max-w-2xl">
         <input type="hidden" name="access_key" value={key}>
         <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          <label class="block">
+          <label class="block reveal" style="--reveal-delay:.05s">
             <span class="sr-only">Your Name</span>
-            <input required type="text" name="name" placeholder="Your Name" class="w-full rounded-xl bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-400 ring-1 ring-black/5 focus:outline-none focus:ring-2 focus:ring-neutral-900/20" />
+            <input required type="text" name="name" placeholder="Your name (or alias, no judgement)" class="w-full rounded-xl bg-neutral-50 px-4 py-3 text-sm text-ink placeholder:text-neutral-400 ring-1 ring-soft transition focus:outline-none focus:ring-2 focus:ring-primary/50" />
           </label>
-          <label class="block relative">
+          <label class="block relative reveal" style="--reveal-delay:.1s">
             <span class="sr-only">Your email address</span>
-            <input required type="email" name="email" placeholder="Your email address" class="w-full rounded-xl bg-neutral-50 px-4 py-3 pr-10 text-sm text-neutral-700 placeholder:text-neutral-400 ring-1 ring-black/5 focus:outline-none focus:ring-2 focus:ring-neutral-900/20" />
+            <input required type="email" name="email" placeholder="Your email (so I can reply)" class="w-full rounded-xl bg-neutral-50 px-4 py-3 pr-10 text-sm text-ink placeholder:text-neutral-400 ring-1 ring-soft transition focus:outline-none focus:ring-2 focus:ring-primary/50" />
           </label>
         </div>
 
-        <label class="mt-4 block">
+        <label class="mt-4 block reveal" style="--reveal-delay:.15s">
           <span class="sr-only">Your Message</span>
-          <textarea required name="message" rows={10} placeholder="Your Message" class="w-full resize-none rounded-xl bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-400 ring-1 ring-black/5 focus:outline-none focus:ring-2 focus:ring-neutral-900/20"></textarea>
+          <textarea required name="message" rows={10} placeholder="What's on your mind? Bonus points for a good crash story." class="w-full resize-none rounded-xl bg-neutral-50 px-4 py-3 text-sm text-ink placeholder:text-neutral-400 ring-1 ring-soft transition focus:outline-none focus:ring-2 focus:ring-primary/50"></textarea>
         </label>
 
         {prod &&<div class="h-captcha mx-auto mt-4 w-min" data-captcha="true"></div>}
 
-        <button type="submit" class="mt-5 w-full rounded-xl bg-neutral-100 px-4 py-3 text-sm font-semibold text-neutral-500 ring-1 ring-black/5 hover:bg-neutral-200/70"> Submit </button>
+        <button type="submit" class="reveal mt-5 w-full rounded-xl bg-primary px-4 py-3 text-sm font-semibold text-white transition duration-300 hover:bg-deep active:scale-[.99]" style="--reveal-delay:.2s"> Send it </button>
       </form>
+
+      <p class="mt-6 text-center text-xs text-neutral-400 font-monospace reveal">
+        // not getting a reply within 48h? ping me on <a class="underline transition-colors hover:text-deep" href="https://t.me/SarK283" target="_blank" rel="noopener">telegram</a> — it happens
+      </p>
+    </section>
+
+    <section class="mt-10 pb-4 reveal" aria-label="Reach me elsewhere">
+      <h2 class="text-center text-xs font-semibold uppercase tracking-wide text-neutral-500">Or skip the form entirely</h2>
+      <div class="mt-4 grid gap-3 sm:grid-cols-3">
+        <a href="https://t.me/SarK283" target="_blank" rel="noopener" class="group card-lift flex items-center gap-3 rounded-xl bg-neutral-50 p-4 ring-soft ring-1 transition hover:bg-white hover:ring-primary/30">
+          <TelegramIcon className="h-5 w-5 shrink-0 text-neutral-400 transition-colors duration-200 group-hover:text-primary" />
+          <span>
+            <span class="block text-sm font-semibold text-ink">Telegram</span>
+            <span class="block font-monospace text-xs text-neutral-500">fastest route to a reply</span>
+          </span>
+        </a>
+        <a href="mailto:saranshmm@gmail.com" class="group card-lift flex items-center gap-3 rounded-xl bg-neutral-50 p-4 ring-soft ring-1 transition hover:bg-white hover:ring-primary/30">
+          <EmailIcon className="h-5 w-5 shrink-0 text-neutral-400 transition-colors duration-200 group-hover:text-primary" />
+          <span>
+            <span class="block text-sm font-semibold text-ink">Email</span>
+            <span class="block font-monospace text-xs text-neutral-500">the classic, always open</span>
+          </span>
+        </a>
+        <a href="https://www.instagram.com/sark283/" target="_blank" rel="noopener" class="group card-lift flex items-center gap-3 rounded-xl bg-neutral-50 p-4 ring-soft ring-1 transition hover:bg-white hover:ring-primary/30">
+          <InstagramIcon className="h-5 w-5 shrink-0 text-neutral-400 transition-colors duration-200 group-hover:text-primary" />
+          <span>
+            <span class="block text-sm font-semibold text-ink">Instagram</span>
+            <span class="block font-monospace text-xs text-neutral-500">less code, more life</span>
+          </span>
+        </a>
+      </div>
     </section>
   </main>
 </Layout>
 
-<script src="https://web3forms.com/client/script.js" async defer></script>
+<script is:inline src="https://web3forms.com/client/script.js" async defer></script>
