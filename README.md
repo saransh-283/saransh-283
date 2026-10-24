@@ -51,15 +51,19 @@ I design and build systems that value **clarity, correctness, and long-term main
 
 ## Web Development
 <br/>
-<img src="https://skillicons.dev/icons?i=react,nextjs,ts,js,tailwind,bootstrap,html,css&theme=light" alt="Web development icons" />
+<img src="https://skillicons.dev/icons?i=react,nextjs,nodejs,ts,js,tailwind,bootstrap,html,css" alt="Web development icons" />
 
 ## Desktop Development
 <br/>
-<img src="https://skillicons.dev/icons?i=qt,electron" alt="Desktop development icons" />
+<img src="https://skillicons.dev/icons?i=c,cpp,qt,python,electron" alt="Desktop development icons" />
 
-## Systems & Engineering
+## Mobile & Game Development
 <br/>
-<img src="https://skillicons.dev/icons?i=nodejs,c,cs,python,cmake,git" alt="Systems and engineering icons" />
+<img src="https://skillicons.dev/icons?i=flutter,unity,androidstudio" alt="Mobile and game development icons" />
+
+## Systems & Tools
+<br/>
+<img src="https://skillicons.dev/icons?i=git,linux,mysql,docker,cmake,solidity" alt="Systems and tools icons" />
 
 </div>
 

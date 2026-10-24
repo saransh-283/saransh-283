@@ -14,6 +14,30 @@ export async function getStaticPaths() {
 
 const { project } = Astro.props;
 
+const iconMap: Record<string, string> = {
+	'C++17': 'cpp', 'CMake (build system)': 'cmake', 'C++': 'cpp', 'CMake': 'cmake',
+	'Python 3': 'python', 'Python': 'python',
+	'Qt6 (GUI framework)': 'qt', 'Qt6': 'qt',
+	'Flutter / Dart (client)': 'flutter', 'Flutter': 'flutter', 'Dart': 'dart',
+	'Rust (Solana programs / Anchor)': 'rust', 'Rust': 'rust',
+	'Bash scripting (automation)': 'bash', 'Bash': 'bash',
+	'OpenGL + glad + glm (rendering)': 'opengl',
+	'OpenCV': 'opencv',
+	'SDL2 + SDL2_ttf (windowing/input and fonts)': 'sdl',
+};
+
+const techs = project.data.technologies || [];
+const iconTechs: string[] = [];
+const otherTechs: string[] = [];
+techs.forEach((t: string) => {
+	const found = Object.keys(iconMap).find(k => t === k || t.includes(k.split(' ')[0]));
+	if (found && iconMap[found]) {
+		iconTechs.push(t);
+	} else {
+		otherTechs.push(t);
+	}
+});
+
 const projectSchema = {
 	'@context': 'https://schema.org',
 	'@type': 'SoftwareSourceCode',
@@ -84,8 +108,23 @@ const projectSchema = {
 		{project.data.technologies?.length > 0 && (
 			<section class="mt-10 reveal">
 				<h2 class="text-base font-bold text-ink">Built with</h2>
-				<div class="mt-3 flex flex-wrap gap-2">
-					{project.data.technologies.map((tech: string) => <Tag text={tech} />)}
+				<div>
+					<div class="mt-3 flex flex-wrap gap-2">
+						{iconTechs.map((tech: string) => {
+							const found = Object.keys(iconMap).find(k => tech === k || tech.includes(k.split(' ')[0]));
+							const slug = found ? iconMap[found] : tech;
+							return (
+								<a href={`https://skillicons.dev/icons?i=${slug}`} target="_blank" rel="noopener noreferrer" aria-label={tech} class="block h-8 w-8 rounded-md ring-1 ring-soft hover:ring-primary transition" title={tech}>
+									<img src={`https://skillicons.dev/icons?i=${slug}`} alt={tech} class="h-8 w-8 rounded-md object-contain" />
+								</a>
+							);
+						})}
+					</div>
+					{otherTechs.length > 0 && (
+						<ul class="mt-3 space-y-1 pl-4 text-sm text-neutral-500 list-disc">
+							{otherTechs.map((tech: string) => <li>{tech}</li>)}
+						</ul>
+					)}
 				</div>
 			</section>
 		)}
