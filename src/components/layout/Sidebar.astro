@@ -137,7 +137,7 @@ const isActive = (href: string) => {
 </aside>
 
 <!-- Mobile top sticky bar -->
-<header class="lg:hidden fixed top-0 left-0 right-0 z-40 h-14 flex items-center justify-between px-4 bg-cream/70 backdrop-blur-md border-b border-neutral-200/40">
+<header class="lg:hidden fixed top-0 left-0 right-0 z-40 h-14 flex items-center justify-between px-4 bg-white/5 dark:bg-ink/5 backdrop-blur-md">
 	<div class="flex items-center gap-3">
 		<img
 			src="/profile.jpg"
@@ -179,7 +179,7 @@ const isActive = (href: string) => {
 
 <!-- Mobile bottom pill nav -->
 <nav class="lg:hidden fixed bottom-4 left-1/2 -translate-x-1/2 z-40" aria-label="Mobile navigation">
-	<div class="flex items-center gap-4 rounded-full bg-cream/70 backdrop-blur-md border border-neutral-200/40 shadow-2xl px-4 py-2.5">
+	<div class="flex items-center gap-4 rounded-full bg-white/5 dark:bg-ink/5 backdrop-blur-md px-4 py-2.5">
 		{[
 			{ href: '/', label: 'home', icon: 'mdi:home' },
 			{ href: '/about', label: 'about', icon: 'mdi:message' },
