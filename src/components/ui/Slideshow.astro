@@ -72,6 +72,30 @@ const { images } = Astro.props;
     update();
   });
 
+  let startX = 0;
+  root.addEventListener("touchstart", (e) => { startX = e.changedTouches[0].screenX; }, { passive: true });
+  root.addEventListener("touchend", (e) => {
+    const diff = startX - e.changedTouches[0].screenX;
+    if (Math.abs(diff) > 30) {
+      index = diff > 0 ? (index + 1) % total : (index - 1 + total) % total;
+      update();
+    }
+  }, { passive: true });
+
+  let autoInterval = setInterval(() => {
+    index = (index + 1) % total;
+    update();
+  }, 8000);
+
+  root.addEventListener("mouseenter", () => clearInterval(autoInterval));
+  root.addEventListener("mouseleave", () => {
+    clearInterval(autoInterval);
+    autoInterval = setInterval(() => {
+      index = (index + 1) % total;
+      update();
+    }, 8000);
+  });
+
   dots.forEach((dot) => {
     dot.addEventListener("click", () => {
       index = Number(dot.dataset.index);

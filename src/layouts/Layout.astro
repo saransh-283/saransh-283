@@ -188,6 +188,14 @@ const schemas = [personSchema, websiteSchema, ...(breadcrumbs ? [breadcrumbs] : 
 		el.classList.toggle('reveal-out', exitedViaTop);
 	};
 
+	document.querySelectorAll('a').forEach((a) => {
+		const href = a.getAttribute('href') || '';
+		if (!href.startsWith('/') && !href.startsWith('#') && !href.startsWith(window.location.origin)) {
+			a.setAttribute('target', '_blank');
+			a.setAttribute('rel', 'noopener noreferrer');
+		}
+	});
+
 	if ('IntersectionObserver' in window) {
 		let firstFrame = true;
 		let firstBatchIndex = 0;

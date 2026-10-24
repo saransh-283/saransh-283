@@ -7,13 +7,31 @@ import Image from '@components/ui/Image.astro';
 
 const projects = await getCollection('projects');
 
-const technologies = [
-	{ name: 'React', icon: '/stacks/react.webp' },
-	{ name: 'Node.js', icon: '/stacks/node.png' },
-	{ name: 'Next.js', icon: '/stacks/next.png' },
-	{ name: 'MongoDB', icon: '/stacks/mongodb.png' },
-	{ name: 'C++', icon: '/stacks/c++.jpg' },
-	{ name: 'Qt6', icon: '/stacks/qt6.png' },
+const sections = [
+  {
+    title: 'Web Development',
+    techs: [
+      { name: 'React', icon: '/stacks/react.webp' },
+      { name: 'Next.js', icon: '/stacks/next.png' },
+      { name: 'Node.js', icon: '/stacks/node.png' },
+    ],
+  },
+  {
+    title: 'Desktop Development',
+    techs: [
+      { name: 'Qt6', icon: '/stacks/qt6.png' },
+      { name: 'Electron', icon: 'https://skillicons.dev/icons?i=electron' },
+      { name: 'C++', icon: 'https://skillicons.dev/icons?i=cpp' },
+    ],
+  },
+  {
+    title: 'Systems & Tools',
+    techs: [
+      { name: 'MongoDB', icon: '/stacks/mongodb.png' },
+      { name: 'Python', icon: 'https://skillicons.dev/icons?i=python' },
+      { name: 'CMake', icon: 'https://skillicons.dev/icons?i=cmake' },
+    ],
+  },
 ];
 ---
 
@@ -102,14 +120,19 @@ const technologies = [
 		<section class="mt-12 reveal">
 			<h2 class="text-lg font-extrabold text-ink">Tools of the trade</h2>
 			<p class="mt-1 text-sm text-neutral-500">The stuff I reach for most often — rotating roster, like a coffee order</p>
-			<div class="mt-5 grid grid-cols-3 gap-4 sm:grid-cols-6">
-			{technologies.map((tech, i) => (
-				<div class="flex flex-col items-center gap-2 text-center" style={`animation: fade-up .5s cubic-bezier(.22,1,.36,1) ${(0.05 * i).toFixed(2)}s both;`}>
-					<Image src={tech.icon} alt={`${tech.name} icon`} containerClass="h-14 w-14 rounded-xl bg-white ring-1 ring-soft p-2" imgClass="object-contain" />
-					<span class="font-monospace text-xs text-neutral-500">{tech.name}</span>
+			{sections.map((section) => (
+				<div class="mt-5">
+					<h3 class="text-xs font-semibold uppercase tracking-wide text-neutral-400">{section.title}</h3>
+					<div class="mt-2 grid grid-cols-3 gap-4 sm:grid-cols-6">
+					{section.techs.map((tech, i) => (
+						<div class="flex flex-col items-center gap-2 text-center" style={`animation: fade-up .5s cubic-bezier(.22,1,.36,1) ${(0.05 * i).toFixed(2)}s both;`}>
+							<Image src={tech.icon} alt={`${tech.name} icon`} containerClass="h-14 w-14 rounded-xl bg-white ring-1 ring-soft p-2" imgClass="object-contain" />
+							<span class="font-monospace text-xs text-neutral-500">{tech.name}</span>
+						</div>
+					))}
+					</div>
 				</div>
 			))}
-			</div>
 		</section>
 	</main>
 </Layout>

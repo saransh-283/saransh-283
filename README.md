@@ -9,7 +9,6 @@
   - GitHub Profile Trophy:      https://github.com/ryo-ma/github-profile-trophy (via community mirror github-profile-trophy-unserori.vercel.app)
   - Contribution Chart:         https://ghchart.rshah.org (rshah's ghchart)
   - Profile Summary Cards:      https://github.com/vn7n24fzkq/github-profile-summary-cards
-  - Snake animation:            https://github.com/Platane/snk (generated into the `output` branch)
 -->
 
 <img
@@ -31,8 +30,8 @@
 
 <div align="center">
 
-<a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.demolab.com?font=Cal+Sans&weight=700&size=26&pause=1000&color=1869B4&center=true&vCenter=true&width=650&lines=I+design+and+build+systems+that+value+clarity+and+correctness.;Clean+abstractions+and+sharp+edges.;Workflows+that+hold+up+under+pressure." alt="Typing SVG — design and build systems that value clarity and correctness" />
+<a href="https://git.io/typing-svg" target="_blank" rel="noopener noreferrer">
+  <img src="https://readme-typing-svg.demolab.com?font=Cal+Sans&weight=700&size=26&pause=1000&color=1869B4&center=true&vCenter=true&width=650&lines=Systems+that+value+clarity+and+correctness.;Clean+abstractions+and+sharp+edges.;Workflows+that+hold+up+under+pressure." alt="Typing SVG — design and build systems that value clarity and correctness" />
 </a>
 
 </div>
@@ -50,11 +49,17 @@ I design and build systems that value **clarity, correctness, and long-term main
 
 <div align="center">
 
-## Tech Stack
+## Web Development
+<br/>
+<img src="https://skillicons.dev/icons?i=react,nextjs,ts,js,tailwind,bootstrap,html,css&theme=light" alt="Web development icons" />
 
-<a href="https://skillicons.dev">
-  <img src="https://skillicons.dev/icons?i=react,nextjs,nodejs,ts,js,vue,tailwind,bootstrap,c,cs,flutter,unity,blender,git,html,css,solidity&theme=light" alt="Tech stack skill icons" />
-</a>
+## Desktop Development
+<br/>
+<img src="https://skillicons.dev/icons?i=qt,electron" alt="Desktop development icons" />
+
+## Systems & Engineering
+<br/>
+<img src="https://skillicons.dev/icons?i=nodejs,c,cs,python,cmake,git" alt="Systems and engineering icons" />
 
 </div>
 
@@ -68,7 +73,7 @@ I design and build systems that value **clarity, correctness, and long-term main
 <img src="https://streak-stats.demolab.com?user=saransh-283&locale=en&mode=daily&theme=vue-dark&hide_border=true&border_radius=5" height="165" alt="GitHub streak statistics for saransh-283" />
 <img src="https://github-readme-stats.vercel.app/api/top-langs?username=saransh-283&layout=compact&langs_count=8&card_width=446&theme=vue-dark&hide_border=true" height="165" alt="Most used languages for saransh-283" />
 
-<a href="https://github.com/ryo-ma/github-profile-trophy">
+<a href="https://github.com/ryo-ma/github-profile-trophy" target="_blank" rel="noopener noreferrer">
   <img src="https://github-profile-trophy-unserori.vercel.app/?username=saransh-283&theme=vue-dark&no-frame=true&no-bg=true&margin-w=6&row=1" width="750" alt="GitHub profile trophies for saransh-283" />
 </a>
 
@@ -90,12 +95,6 @@ I design and build systems that value **clarity, correctness, and long-term main
 </div>
 
 ###
-
-## Contributions
-
-<a href="https://github.com/saransh-283/saransh-283">
-  <img src="https://raw.githubusercontent.com/saransh-283/saransh-283/output/snake.svg" alt="Contribution snake animation consuming GitHub contributions" width="100%" />
-</a>
 
 <hr />
 
