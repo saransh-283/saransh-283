@@ -9,7 +9,7 @@ tags:
   - playwright
   - api-testing
 featured: true
-what: I set up automated UI and API test systems that continuously verify your software actually behaves the way you think it does — and keep verifying it long after launch.
+what: I set up automated UI and API test systems that continuously verify your software actually behaves the way you think it does - and keep verifying it long after launch.
 focus:
   - UI automation that doesn't flake into irrelevance
   - API test coverage where UI tests can't reach

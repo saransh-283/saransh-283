@@ -13,7 +13,7 @@
 
 <img
   src="https://capsule-render.vercel.app/api?type=waving&color=0:1869b4,50:5aa9e6,100:c4edff&height=200&section=header&text=Saransh%20Kawadkar&fontSize=44&fontColor=ffffff&fontAlignY=32&animation=fadeIn&desc=Full-Stack%20Software%20Engineer&descSize=20&descColor=ffffff&descAlignY=58&descAlign=50"
-  alt="Saransh Kawadkar — Full-Stack Software Engineer header banner"
+  alt="Saransh Kawadkar - Full-Stack Software Engineer header banner"
 />
 
 <a href="https://saranshkawadkar.com" target="_blank" rel="noreferrer">
@@ -31,7 +31,7 @@
 <div align="center">
 
 <a href="https://git.io/typing-svg" target="_blank" rel="noopener noreferrer">
-  <img src="https://readme-typing-svg.demolab.com?font=Cal+Sans&weight=700&size=26&pause=1000&color=1869B4&center=true&vCenter=true&width=650&lines=Systems+that+value+clarity+and+correctness.;Clean+abstractions+and+sharp+edges.;Workflows+that+hold+up+under+pressure." alt="Typing SVG — design and build systems that value clarity and correctness" />
+  <img src="https://readme-typing-svg.demolab.com?font=Cal+Sans&weight=700&size=26&pause=1000&color=1869B4&center=true&vCenter=true&width=650&lines=Systems+that+value+correctness;Clean+abstractions+and+sharp+edges;Workflows+that+hold+up+under+pressure" alt="Typing SVG - design and build systems that value clarity and correctness" />
 </a>
 
 </div>
@@ -42,7 +42,7 @@
 
 I design and build systems that value **clarity, correctness, and long-term maintainability**. Clean abstractions, sharp edges, and workflows that hold up under pressure are what I strive for in my work.
 
-- I'm drawn to problems where **architecture matters as much as execution** — from low-level engines to high-level interfaces.
+- I'm drawn to problems where **architecture matters as much as execution** - from low-level engines to high-level interfaces.
 - I turn messy ideas into **coherent, dependable software**.
 - My work lives at the intersection of **infrastructure, product thinking, and experimentation**, where curiosity is allowed to get its hands dirty.
 - I've contributed to startups like **Bask Health** and **DigiGrow**, designing user-friendly portals and crafting social media content.

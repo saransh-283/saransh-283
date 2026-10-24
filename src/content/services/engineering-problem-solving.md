@@ -7,7 +7,7 @@ tags:
   - debugging
   - performance
   - architecture
-what: I investigate complex technical issues and implement pragmatic, cost-aware solutions. Slow queries, flaky tests, mystery production bugs — I enjoy the cases where the easy answer already failed.
+what: I investigate complex technical issues and implement pragmatic, cost-aware solutions. Slow queries, flaky tests, mystery production bugs - I enjoy the cases where the easy answer already failed.
 focus:
   - Systematic debugging, not vibes-based testing
   - Performance analysis with actual numbers

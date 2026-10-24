@@ -8,9 +8,9 @@ import '@fontsource/inconsolata/600.css';
 import '@fontsource/inconsolata/700.css';
 
 const SITE = 'https://saranshkawadkar.dev';
-const SITE_NAME = 'Saransh Kawadkar — Software Engineer who ships';
+const SITE_NAME = 'Saransh Kawadkar - Software Engineer who ships';
 const DEFAULT_DESCRIPTION =
-	"Hi, I'm Saransh — a full-stack software engineer who turns messy ideas into fast, reliable software. Wander through my builds, what I can do for you, and — if you're feeling generous — a support page.";
+	"Hi, I'm Saransh - a full-stack software engineer who turns messy ideas into fast, reliable software. Wander through my builds, what I can do for you, and - if you're feeling generous - a support page.";
 const DEFAULT_OG_IMAGE = `${SITE}/og.jpg`;
 
 export interface LayoutProps {
@@ -21,7 +21,7 @@ export interface LayoutProps {
 }
 
 const {
-	title = 'Saransh Kawadkar — Software Engineer who ships',
+	title = 'Saransh Kawadkar - Software Engineer who ships',
 	description = DEFAULT_DESCRIPTION,
 	image = DEFAULT_OG_IMAGE,
 	type = 'website',
@@ -116,7 +116,7 @@ const schemas = [personSchema, websiteSchema, ...(breadcrumbs ? [breadcrumbs] : 
 					type: 'image/jpeg',
 					width: 1200,
 					height: 630,
-					alt: `${ogTitle} — portfolio`,
+					alt: `${ogTitle} - portfolio`,
 				},
 			}}
 			twitter={{
@@ -126,7 +126,7 @@ const schemas = [personSchema, websiteSchema, ...(breadcrumbs ? [breadcrumbs] : 
 				title,
 				description,
 				image: ogImage,
-				imageAlt: `${ogTitle} — portfolio`,
+				imageAlt: `${ogTitle} - portfolio`,
 			}}
 		/>
 

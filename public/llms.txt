@@ -1,11 +1,11 @@
-# Saransh Kawadkar — Portfolio
+# Saransh Kawadkar - Portfolio
 
 > Saransh Kawadkar is a full-stack software engineer who designs and builds reliable web systems, developer tooling, desktop applications, automation, and blockchain prototypes using React, Next.js, Node.js, TypeScript, Python, C++, Qt, Electron, Flutter, Git, Docker, CMake, and Solidity. This page lists the site's content in a machine- and LLM-friendly format.
 
 - [Home](https://saranshkawadkar.dev/): Overview, featured projects (Slate UI, PRPG, INRT, 3D-MGV), tech stack groups (Web, Desktop, Mobile & Game, Systems & Tools), and contact.
 - [About](https://saranshkawadkar.dev/about): Background, skills (React, Next.js, TypeScript, C++, Qt, Python, CMake), work philosophy, and favorite stack.
 - [Projects](https://saranshkawadkar.dev/projects): Full list of engineering and product projects with descriptions, technologies, and screenshots.
-- [Services](https://saranshkawadkar.dev/services): Engineering services offered — web systems, application development, engineering systems/tooling, problem solving, test automation.
+- [Services](https://saranshkawadkar.dev/services): Engineering services offered - web systems, application development, engineering systems/tooling, problem solving, test automation.
 - [Contact](https://saranshkawadkar.dev/contact): Reach out for work, collaboration, or questions.
 - [Support](https://saranshkawadkar.dev/support): Support the work via tips.
 

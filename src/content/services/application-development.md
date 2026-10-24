@@ -2,14 +2,14 @@
 title: Application Development
 shortTitle: Apps
 order: 1
-summary: "I design and build web applications with clean architecture and APIs that stay sane as they grow — the kind other devs (including future me) enjoy working in."
+summary: "I design and build web applications with clean architecture and APIs that stay sane as they grow - the kind other devs (including future me) enjoy working in."
 tags: 
   - web
   - backend
   - frontend
   - architecture
 featured: true
-what: I turn ideas into working web applications — full-stack, built with structure that lasts. Clean project setup, sensible API design, and code that stays readable long after launch.
+what: I turn ideas into working web applications - full-stack, built with structure that lasts. Clean project setup, sensible API design, and code that stays readable long after launch.
 focus:
   - Clean project structure from day one
   - APIs that don't fight you when they grow
