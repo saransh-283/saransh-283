@@ -17,6 +17,7 @@
 	<circle cx="156" cy="98" r="10" fill="#5AA9E6"/>
 	<text x="190" y="96" font-family="Inconsolata, ui-monospace, monospace" font-size="12" fill="#8b949e">3 suspects mapped</text>
 	<text x="190" y="116" font-family="Inconsolata, ui-monospace, monospace" font-size="12" fill="#8b949e">1 real villain found</text>
-	<text x="190" y="136" font-family="Inconsolata, ui-monospace, monospace" font-size="12" fill="#5AA9E6">&#8594; fix the cause, not the symptom</text>
+	<text x="190" y="136" font-family="Inconsolata, ui-monospace, monospace" font-size="12" fill="#5AA9E6">&#8594; fix the cause,</text>
+	<text x="202" y="152" font-family="Inconsolata, ui-monospace, monospace" font-size="12" fill="#5AA9E6">not the symptom</text>
 	<rect x="18" y="164" width="9" height="16" fill="#1869B4"/>
 </svg>
