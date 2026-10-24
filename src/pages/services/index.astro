@@ -5,7 +5,23 @@ import ServiceCard from "@components/services/ServiceCard.astro";
 import PuzzleIcon from "@icons/puzzle.astro";
 
 const services = (await getCollection("services")).sort((a, b) => (a.data.order ?? 999) - (b.data.order ?? 999));
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Software Engineering Services',
+  description: 'Web systems, app development, tooling, automation, and bug hunts.',
+  provider: {
+    '@type': 'Person',
+    name: 'Saransh Kawadkar',
+    url: 'https://saranshkawadkar.dev',
+  },
+  areaServed: { '@type': 'Country', name: 'IN' },
+  serviceType: ['Web Development', 'Desktop Development', 'Mobile Development', 'Systems Engineering'],
+};
 ---
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
 
 <Layout
 	title="Saransh — how I can help"

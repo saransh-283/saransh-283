@@ -1,23 +1,32 @@
 # Saransh Kawadkar — Portfolio
 
-> Saransh Kawadkar is a full-stack software engineer who designs and builds reliable web systems, developer tooling, and automation using React, Next.js, Node.js, TypeScript, Python, and C++. This page lists the site's content in a machine- and LLM-friendly format.
+> Saransh Kawadkar is a full-stack software engineer who designs and builds reliable web systems, developer tooling, desktop applications, automation, and blockchain prototypes using React, Next.js, Node.js, TypeScript, Python, C++, Qt, Electron, Flutter, Git, Docker, CMake, and Solidity. This page lists the site's content in a machine- and LLM-friendly format.
 
-- [Home](https://saranshkawadkar.dev/): Overview of Saransh Kawadkar, featured projects, and tech stack.
-- [About](https://saranshkawadkar.dev/about): Background, experience, and work philosophy.
-- [Projects](https://saranshkawadkar.dev/projects): Full list of engineering and product projects.
-- [Services](https://saranshkawadkar.dev/services): Engineering services offered for hire.
+- [Home](https://saranshkawadkar.dev/): Overview, featured projects (Slate UI, PRPG, INRT, 3D-MGV), tech stack groups (Web, Desktop, Mobile & Game, Systems & Tools), and contact.
+- [About](https://saranshkawadkar.dev/about): Background, skills (React, Next.js, TypeScript, C++, Qt, Python, CMake), work philosophy, and favorite stack.
+- [Projects](https://saranshkawadkar.dev/projects): Full list of engineering and product projects with descriptions, technologies, and screenshots.
+- [Services](https://saranshkawadkar.dev/services): Engineering services offered — web systems, application development, engineering systems/tooling, problem solving, test automation.
+- [Contact](https://saranshkawadkar.dev/contact): Reach out for work, collaboration, or questions.
+- [Support](https://saranshkawadkar.dev/support): Support the work via tips.
 
-## Projects
+## Skills & Technologies
 
-- [3DMGV](https://saranshkawadkar.dev/projects/3d-mgv): Linux-first toolchain that converts videos into textured 3D models with OpenMVG/OpenMVS and Python automation.
-- [INRT](https://saranshkawadkar.dev/projects/inrt): Solana-based, blockchain-first banking prototype with a Flutter desktop client and on-chain programs for identity and fixed deposits.
-- [PRPG](https://saranshkawadkar.dev/projects/prpg): Procedural RPG prototype in C++ with procedural generation, an OpenGL renderer, and local LLM-driven NPC behaviors.
-- [Slate UI](https://saranshkawadkar.dev/projects/slate-ui): UI components / interfaces project.
+Web Development: React, Next.js, Node.js, TypeScript, JavaScript, Vue, Tailwind CSS, Bootstrap, HTML, CSS.
+Desktop Development: C, C++, Qt6, Python, Electron, CMake.
+Mobile & Game Development: Flutter, Unity, Android Studio, Dart.
+Systems & Tools: Git, Linux, SQL, Docker, CMake, Solidity.
+
+## Featured Projects
+
+- [Slate UI](https://saranshkawadkar.dev/projects/slate-ui): Native Qt6 desktop chat interface for local LLMs (C++17, CMake, Qt6, llama.cpp).
+- [PRPG](https://saranshkawadkar.dev/projects/prpg): Procedural RPG prototype in C++ with OpenGL rendering, SDL2, and local LLM-driven NPCs.
+- [INRT](https://saranshkawadkar.dev/projects/inrt): Solana banking prototype (Flutter client, Rust/Anchor on-chain, Bash automation).
+- [3D-MGV](https://saranshkawadkar.dev/projects/3d-mgv): Video-to-3D-model pipeline using Python, OpenMVG, OpenMVS, OpenCV, and rembg.
 
 ## Services
 
-- [Web systems](https://saranshkawadkar.dev/services/web-systems): End-to-end web application design, architecture, and delivery.
-- [Application development](https://saranshkawadkar.dev/services/application-development): Cross-platform and desktop application development.
-- [Engineering systems and tooling](https://saranshkawadkar.dev/services/engineering-systems-and-tooling): CI/CD, build pipelines, automation, and developer tooling.
-- [Engineering problem solving](https://saranshkawadkar.dev/services/engineering-problem-solving): Debugging hard problems, performance work, and architectural guidance.
-- [Test automation](https://saranshkawadkar.dev/services/test-automation): Automated testing strategies, E2E suites, and quality gates.
+- [Web Systems](https://saranshkawadkar.dev/services/web-systems): Production-ready front-ends with performance, accessibility, and scalable architecture.
+- [Application Development](https://saranshkawadkar.dev/services/application-development): Cross-platform desktop and web applications built with clean architecture.
+- [Engineering Systems and Tooling](https://saranshkawadkar.dev/services/engineering-systems-and-tooling): CI/CD, build pipelines, automation, developer tooling.
+- [Engineering Problem Solving](https://saranshkawadkar.dev/services/engineering-problem-solving): Debugging, performance optimization, architectural guidance.
+- [Test Automation](https://saranshkawadkar.dev/services/test-automation): E2E testing, quality gates, automated verification strategies.

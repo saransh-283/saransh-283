@@ -145,7 +145,7 @@ const sections = [
 					<div class="mt-2 grid grid-cols-3 gap-4 sm:grid-cols-6">
 					{section.techs.map((tech, i) => (
 						<div class="flex flex-col items-center gap-2 text-center" style={`animation: fade-up .5s cubic-bezier(.22,1,.36,1) ${(0.05 * i).toFixed(2)}s both;`}>
-							<Image src={tech.icon} alt={`${tech.name} icon`} containerClass="h-14 w-14 rounded-xl bg-white ring-1 ring-soft p-2" imgClass="object-contain" />
+							<Image src={tech.icon} alt={`${tech.name} technology`} containerClass="h-14 w-14 rounded-xl bg-white ring-1 ring-soft p-2" imgClass="object-contain" />
 							<span class="font-monospace text-xs text-neutral-500">{tech.name}</span>
 						</div>
 					))}
