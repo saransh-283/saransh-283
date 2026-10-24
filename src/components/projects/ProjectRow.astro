@@ -1,7 +1,7 @@
 ---
 import Image from "@components/ui/Image.astro";
 import Tag from "@components/ui/Tag.astro";
-import ArrowRight from "@icons/arrow-right.astro";
+import { Icon } from 'astro-icon/components';
 
 export type ProjectRowData = {
 	title: string;
@@ -42,7 +42,7 @@ const { title, description, href, thumbnail, tags, inProgress = false, delay = 0
 					<p class="mt-1 line-clamp-2 text-sm text-neutral-500">{description}</p>
 				</div>
 				<span class="mt-0.5 shrink-0 text-neutral-300 transition duration-300 group-hover:translate-x-1 group-hover:text-primary" aria-hidden="true">
-					<ArrowRight className="h-5 w-5" />
+					<Icon name="mdi:arrow-right" class="h-5 w-5" />
 				</span>
 			</div>
 			<div class="mt-3 flex flex-wrap gap-2">

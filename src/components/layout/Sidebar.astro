@@ -1,31 +1,21 @@
 ---
-import GithubIcon from '@icons/github.astro';
-import HeartIcon from '@icons/heart.astro';
-import HouseIcon from '@icons/home.astro';
-import LinkedinIcon from '@icons/linkedin.astro';
-import FiverrIcon from '@icons/fiverr.astro';
-import MailIcon from '@icons/email.astro';
-import MoonIcon from '@icons/moon.astro';
-import SunIcon from '@icons/sun.astro';
-import FolderIcon from '@icons/briefcase.astro';
-import WrenchIcon from '@icons/puzzle.astro';
-import MessageIcon from '@icons/message.astro';
+import { Icon } from 'astro-icon/components';
 
 type NavItem = {
 	label: string;
 	path: string;
 	href: string;
-	icon?: any;
+	icon?: string;
 };
 
 const pathname = Astro.url?.pathname ?? '/';
 
 const navItems: NavItem[] = [
-	{ label: 'home', path: '~/', href: '/', icon: HouseIcon },
-	{ label: 'about', path: '~/about', href: '/about', icon: MessageIcon },
-	{ label: 'projects', path: '~/projects', href: '/projects', icon: FolderIcon },
-	{ label: 'services', path: '~/services', href: '/services', icon: WrenchIcon },
-	{ label: 'contact', path: '~/contact', href: '/contact', icon: MailIcon },
+	{ label: 'home', path: '~/', href: '/', icon: 'mdi:home' },
+	{ label: 'about', path: '~/about', href: '/about', icon: 'mdi:message' },
+	{ label: 'projects', path: '~/projects', href: '/projects', icon: 'mdi:briefcase' },
+	{ label: 'services', path: '~/services', href: '/services', icon: 'mdi:puzzle' },
+	{ label: 'contact', path: '~/contact', href: '/contact', icon: 'mdi:email' },
 ];
 
 const isActive = (href: string) => {
@@ -75,7 +65,7 @@ const isActive = (href: string) => {
 									: 'text-neutral-700 hover:bg-white hover:text-ink hover:pl-4',
 							]}
 						>
-							{item.icon && <item.icon className={`h-4 w-4 ${isActive(item.href) ? 'text-primary' : 'text-neutral-400 group-hover:text-primary'} transition-colors duration-200`} />}
+							{item.icon && <Icon name={item.icon} class={`h-4 w-4 ${isActive(item.href) ? 'text-primary' : 'text-neutral-400 group-hover:text-primary'} transition-colors duration-200`} />}
 							<span>{item.path}</span>
 						</a>
 					</li>
@@ -88,7 +78,7 @@ const isActive = (href: string) => {
 				href="/support"
 				class="group card-lift flex items-center gap-3 rounded-xl bg-primary px-3 py-2.5 text-sm font-semibold text-white mb-6 hover:bg-deep"
 			>
-				<HeartIcon className="h-4 w-4 transition-transform duration-300 group-hover:scale-110" />
+				<Icon name="mdi:heart" class="h-4 w-4 transition-transform duration-300 group-hover:scale-110" />
 				<span data-testid="support-cta">Support me</span>
 				<span class="ml-auto font-monospace text-xs opacity-80" aria-hidden="true">&hearts;</span>
 			</a>
@@ -98,12 +88,12 @@ const isActive = (href: string) => {
 				<button
 					id="theme-toggle"
 					type="button"
-					class="theme-toggle rounded-lg p-1.5 text-neutral-500 ring-soft ring-1 transition hover:text-primary"
+					class="theme-toggle rounded-lg p-1.5 text-neutral-500 ring-soft ring-1 transition hover:text-primary cursor-pointer"
 					aria-label="Toggle color theme"
 					data-testid="theme-toggle"
 				>
-					<SunIcon className="icon-sun h-4 w-4" />
-					<MoonIcon className="icon-moon h-4 w-4" />
+					<Icon name="mdi:weather-sunny" class="icon-sun h-4 w-4" />
+					<Icon name="mdi:moon-waxing-crescent" class="icon-moon h-4 w-4" />
 				</button>
 			</div>
 			<ul class="mt-3 space-y-2 text-sm" aria-label="Social profiles">
@@ -114,7 +104,7 @@ const isActive = (href: string) => {
 						target="_blank"
 						rel="noopener"
 					>
-						<GithubIcon className="h-4 w-4 text-neutral-400 group-hover:text-primary transition-colors duration-200" />
+						<Icon name="mdi:github" class="h-4 w-4 text-neutral-400 group-hover:text-primary transition-colors duration-200" />
 						<span>Github</span>
 					</a>
 				</li>
@@ -125,7 +115,7 @@ const isActive = (href: string) => {
 						target="_blank"
 						rel="noopener"
 					>
-						<LinkedinIcon className="h-4 w-4 text-neutral-400 group-hover:text-primary transition-colors duration-200" />
+						<Icon name="mdi:linkedin" class="h-4 w-4 text-neutral-400 group-hover:text-primary transition-colors duration-200" />
 						<span>LinkedIn</span>
 					</a>
 				</li>
@@ -136,7 +126,7 @@ const isActive = (href: string) => {
 						target="_blank"
 						rel="noopener"
 					>
-						<FiverrIcon className="h-4 w-4 text-neutral-400 group-hover:text-primary transition-colors duration-200" />
+						<Icon name="simple-icons:fiverr" class="h-4 w-4 text-neutral-400 group-hover:text-primary transition-colors duration-200" />
 						<span>Fiverr</span>
 					</a>
 				</li>
@@ -170,18 +160,18 @@ const isActive = (href: string) => {
 	</div>
 
 	<div class="flex items-center gap-2">
-		<button id="theme-toggle-mobile" type="button" class="theme-toggle rounded-lg p-2 text-neutral-500 ring-soft ring-1 transition hover:text-primary hover:bg-white/60" aria-label="Toggle color theme" data-testid="theme-toggle">
-			<SunIcon className="icon-sun h-4 w-4" />
-			<MoonIcon className="icon-moon h-4 w-4" />
+		<button id="theme-toggle-mobile" type="button" class="theme-toggle rounded-lg p-2 text-neutral-500 ring-soft ring-1 transition hover:text-primary hover:bg-white/60 cursor-pointer" aria-label="Toggle color theme" data-testid="theme-toggle">
+			<Icon name="mdi:weather-sunny" class="icon-sun h-4 w-4" />
+			<Icon name="mdi:moon-waxing-crescent" class="icon-moon h-4 w-4" />
 		</button>
 		<div class="relative">
-			<button id="mobile-elsewhere-btn" type="button" class="rounded-lg p-2 text-neutral-600 hover:text-ink hover:bg-white/60 transition flex items-center gap-1" aria-label="Elsewhere links">
+			<button id="mobile-elsewhere-btn" type="button" class="rounded-lg p-2 text-neutral-600 hover:text-ink hover:bg-white/60 transition flex items-center gap-1 cursor-pointer" aria-label="Elsewhere links">
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-5 w-5 fill-current transition-transform duration-300" id="elsewhere-caret"><path d="M7 10l5 5 5-5z"/></svg>
 			</button>
 			<div id="mobile-elsewhere-dropdown" class="absolute right-0 top-full mt-2 w-40 rounded-xl bg-white shadow-xl border border-neutral-200/60 overflow-hidden origin-top scale-y-0 opacity-0 transition-all duration-300">
-				<a href="https://github.com/saransh-283" target="_blank" rel="noopener" class="flex items-center gap-2 px-3 py-2 text-xs font-monospace text-neutral-700 hover:bg-primary/10 hover:text-ink"><GithubIcon className="h-3.5 w-3.5" /> Github</a>
-				<a href="https://www.linkedin.com/in/saransh-kawadkar" target="_blank" rel="noopener" class="flex items-center gap-2 px-3 py-2 text-xs font-monospace text-neutral-700 hover:bg-primary/10 hover:text-ink"><LinkedinIcon className="h-3.5 w-3.5" /> LinkedIn</a>
-				<a href="https://www.fiverr.com/saranshkk" target="_blank" rel="noopener" class="flex items-center gap-2 px-3 py-2 text-xs font-monospace text-neutral-700 hover:bg-primary/10 hover:text-ink"><FiverrIcon className="h-3.5 w-3.5" /> Fiverr</a>
+				<a href="https://github.com/saransh-283" target="_blank" rel="noopener" class="flex items-center gap-2 px-3 py-2 text-xs font-monospace text-neutral-700 hover:bg-primary/10 hover:text-ink"><Icon name="mdi:github" class="h-3.5 w-3.5" /> Github</a>
+				<a href="https://www.linkedin.com/in/saransh-kawadkar" target="_blank" rel="noopener" class="flex items-center gap-2 px-3 py-2 text-xs font-monospace text-neutral-700 hover:bg-primary/10 hover:text-ink"><Icon name="mdi:linkedin" class="h-3.5 w-3.5" /> LinkedIn</a>
+				<a href="https://www.fiverr.com/saranshkk" target="_blank" rel="noopener" class="flex items-center gap-2 px-3 py-2 text-xs font-monospace text-neutral-700 hover:bg-primary/10 hover:text-ink"><Icon name="simple-icons:fiverr" class="h-3.5 w-3.5" /> Fiverr</a>
 			</div>
 		</div>
 	</div>
@@ -189,17 +179,17 @@ const isActive = (href: string) => {
 
 <!-- Mobile bottom pill nav -->
 <nav class="lg:hidden fixed bottom-4 left-1/2 -translate-x-1/2 z-40" aria-label="Mobile navigation">
-	<div class="flex items-center gap-4 rounded-full bg-cream/80 backdrop-blur-xl border border-neutral-200/40 shadow-2xl px-4 py-2.5">
+	<div class="flex items-center gap-4 rounded-full bg-cream/70 backdrop-blur-md border border-neutral-200/40 shadow-2xl px-4 py-2.5">
 		{[
-			{ href: '/', label: 'home', icon: HouseIcon },
-			{ href: '/about', label: 'about', icon: MessageIcon },
-			{ href: '/projects', label: 'projects', icon: FolderIcon },
-			{ href: '/services', label: 'services', icon: WrenchIcon },
-			{ href: '/contact', label: 'contact', icon: MailIcon },
-			{ href: '/support', label: 'support', icon: HeartIcon },
+			{ href: '/', label: 'home', icon: 'mdi:home' },
+			{ href: '/about', label: 'about', icon: 'mdi:message' },
+			{ href: '/projects', label: 'projects', icon: 'mdi:briefcase' },
+			{ href: '/services', label: 'services', icon: 'mdi:puzzle' },
+			{ href: '/contact', label: 'contact', icon: 'mdi:email' },
+			{ href: '/support', label: 'support', icon: 'mdi:heart' },
 		].map((item) => (
 			<a href={item.href} aria-label={item.label} class="group relative flex h-11 w-11 items-center justify-center rounded-full transition hover:bg-white/70" aria-current={isActive(item.href) ? 'page' : undefined}>
-				<item.icon className={`h-5 w-5 transition-colors duration-200 ${isActive(item.href) ? 'text-primary' : 'text-neutral-500 group-hover:text-ink'}`} />
+				<Icon name={item.icon} class={`h-5 w-5 transition-colors duration-200 ${isActive(item.href) ? 'text-primary' : 'text-neutral-500 group-hover:text-ink'}`} />
 				<span class="absolute -top-8 left-1/2 -translate-x-1/2 rounded-md bg-ink px-2.5 py-0.5 text-[10px] font-monospace text-white opacity-0 translate-y-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0 whitespace-nowrap pointer-events-none z-50">{item.label}</span>
 			</a>
 		))}

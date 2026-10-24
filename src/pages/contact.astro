@@ -1,8 +1,6 @@
 ---
-import EmailIcon from "@icons/email.astro";
-import InstagramIcon from "@icons/instagram.astro";
-import TelegramIcon from "@icons/telegram.astro";
 import Layout from "@layouts/Layout.astro";
+import { Icon } from 'astro-icon/components';
 
 const env = import.meta.env;
 const prod = env.PROD;
@@ -19,7 +17,7 @@ const key =
     <header class="pt-4 text-center">
       <div class="flex gap-6 justify-center items-center">
         <div class="mx-auto h-9 w-9 animate-float text-primary">
-          <EmailIcon className="h-9 w-9" />
+          <Icon name="mdi:email" class="h-9 w-9" />
         </div>
       </div>
       <h1 class="mt-3 text-4xl font-extrabold tracking-tight text-ink">Say hi 👋</h1>
@@ -70,21 +68,21 @@ const key =
       <h2 class="text-center text-xs font-semibold uppercase tracking-wide text-neutral-500">Or skip the form entirely</h2>
       <div class="mt-4 grid gap-3 sm:grid-cols-3">
         <a href="https://t.me/SarK283" target="_blank" rel="noopener" class="group card-lift flex items-center gap-3 rounded-xl bg-neutral-50 p-4 ring-soft ring-1 transition hover:bg-white hover:ring-primary/30">
-          <TelegramIcon className="h-5 w-5 shrink-0 text-neutral-400 transition-colors duration-200 group-hover:text-primary" />
+          <Icon name="mdi:telegram" class="h-5 w-5 shrink-0 text-neutral-400 transition-colors duration-200 group-hover:text-primary" />
           <span>
             <span class="block text-sm font-semibold text-ink">Telegram</span>
             <span class="block font-monospace text-xs text-neutral-500">fastest route to a reply</span>
           </span>
         </a>
         <a href="mailto:saranshmm@gmail.com" class="group card-lift flex items-center gap-3 rounded-xl bg-neutral-50 p-4 ring-soft ring-1 transition hover:bg-white hover:ring-primary/30">
-          <EmailIcon className="h-5 w-5 shrink-0 text-neutral-400 transition-colors duration-200 group-hover:text-primary" />
+          <Icon name="mdi:email" class="h-5 w-5 shrink-0 text-neutral-400 transition-colors duration-200 group-hover:text-primary" />
           <span>
             <span class="block text-sm font-semibold text-ink">Email</span>
             <span class="block font-monospace text-xs text-neutral-500">the classic, always open</span>
           </span>
         </a>
         <a href="https://www.instagram.com/sark283/" target="_blank" rel="noopener" class="group card-lift flex items-center gap-3 rounded-xl bg-neutral-50 p-4 ring-soft ring-1 transition hover:bg-white hover:ring-primary/30">
-          <InstagramIcon className="h-5 w-5 shrink-0 text-neutral-400 transition-colors duration-200 group-hover:text-primary" />
+          <Icon name="mdi:instagram" class="h-5 w-5 shrink-0 text-neutral-400 transition-colors duration-200 group-hover:text-primary" />
           <span>
             <span class="block text-sm font-semibold text-ink">Instagram</span>
             <span class="block font-monospace text-xs text-neutral-500">less code, more life</span>
