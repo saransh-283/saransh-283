@@ -34,11 +34,10 @@ const isActive = (href: string) => {
 };
 ---
 
-<div id="sidebar-backdrop" class="fixed inset-0 z-10 hidden bg-black/40 backdrop-blur-[2px] lg:hidden" aria-hidden="true"></div>
-
+<!-- Desktop sidebar -->
 <aside
 	id="sidebar"
-	class="fixed bg-cream shadow-sm z-20 h-full w-1/2 transition-transform duration-300 ease-out top-0 left-0 -translate-x-full shrink-0 lg:sticky lg:top-0 lg:h-screen lg:w-auto lg:translate-x-0 lg:shadow-none lg:border-r lg:border-neutral-200/70 lg:z-0"
+	class="hidden lg:block lg:sticky lg:top-0 lg:h-screen lg:w-auto lg:z-0 lg:border-r lg:border-neutral-200/70"
 >
 	<div class="flex h-full flex-col px-6 py-8 lg:overflow-y-auto custom-scrollbar">
 		<div class="flex items-center gap-3 animate-fade-up">
@@ -146,108 +145,114 @@ const isActive = (href: string) => {
 		</div>
 	</div>
 </aside>
-<button
-	id="sidebar-toggle"
-	type="button"
-	aria-label="Toggle navigation menu"
-	aria-expanded="false"
-	aria-controls="sidebar"
-	class="sidebar-burger fixed right-4 top-4 z-30 h-10 w-10 cursor-pointer rounded-xl lg:hidden"
->
-	<span class="toggle-bar" aria-hidden="true"></span>
-	<span class="toggle-bar" aria-hidden="true"></span>
-	<span class="toggle-bar" aria-hidden="true"></span>
-</button>
+
+<!-- Mobile top sticky bar -->
+<header class="lg:hidden fixed top-0 left-0 right-0 z-40 h-14 flex items-center justify-between px-4 bg-cream/70 backdrop-blur-md border-b border-neutral-200/40">
+	<div class="flex items-center gap-3">
+		<img
+			src="/profile.jpg"
+			alt="Saransh Kawadkar profile photo"
+			width="36"
+			height="36"
+			class="h-9 w-9 rounded-full object-cover ring-2 ring-primary/30"
+			loading="eager"
+		/>
+		<div class="leading-tight">
+			<div class="text-xs font-display font-semibold text-ink">Saransh Kawadkar</div>
+			<div class="mt-0.5 flex items-center gap-1.5 text-[10px] font-monospace text-neutral-500">
+				<span class="relative flex h-1.5 w-1.5">
+					<span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" aria-hidden="true"></span>
+					<span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500" aria-hidden="true"></span>
+				</span>
+				open to work
+			</div>
+		</div>
+	</div>
+
+	<div class="flex items-center gap-2">
+		<button id="theme-toggle-mobile" type="button" class="theme-toggle rounded-lg p-2 text-neutral-500 ring-soft ring-1 transition hover:text-primary hover:bg-white/60" aria-label="Toggle color theme" data-testid="theme-toggle">
+			<SunIcon className="icon-sun h-4 w-4" />
+			<MoonIcon className="icon-moon h-4 w-4" />
+		</button>
+		<div class="relative">
+			<button id="mobile-elsewhere-btn" type="button" class="rounded-lg p-2 text-neutral-600 hover:text-ink hover:bg-white/60 transition flex items-center gap-1" aria-label="Elsewhere links">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-5 w-5 fill-current transition-transform duration-300" id="elsewhere-caret"><path d="M7 10l5 5 5-5z"/></svg>
+			</button>
+			<div id="mobile-elsewhere-dropdown" class="absolute right-0 top-full mt-2 w-40 rounded-xl bg-white shadow-xl border border-neutral-200/60 overflow-hidden origin-top scale-y-0 opacity-0 transition-all duration-300">
+				<a href="https://github.com/saransh-283" target="_blank" rel="noopener" class="flex items-center gap-2 px-3 py-2 text-xs font-monospace text-neutral-700 hover:bg-primary/10 hover:text-ink"><GithubIcon className="h-3.5 w-3.5" /> Github</a>
+				<a href="https://www.linkedin.com/in/saransh-kawadkar" target="_blank" rel="noopener" class="flex items-center gap-2 px-3 py-2 text-xs font-monospace text-neutral-700 hover:bg-primary/10 hover:text-ink"><LinkedinIcon className="h-3.5 w-3.5" /> LinkedIn</a>
+				<a href="https://www.fiverr.com/saranshkk" target="_blank" rel="noopener" class="flex items-center gap-2 px-3 py-2 text-xs font-monospace text-neutral-700 hover:bg-primary/10 hover:text-ink"><FiverrIcon className="h-3.5 w-3.5" /> Fiverr</a>
+			</div>
+		</div>
+	</div>
+</header>
+
+<!-- Mobile bottom pill nav -->
+<nav class="lg:hidden fixed bottom-4 left-1/2 -translate-x-1/2 z-40" aria-label="Mobile navigation">
+	<div class="flex items-center gap-4 rounded-full bg-cream/80 backdrop-blur-xl border border-neutral-200/40 shadow-2xl px-4 py-2.5">
+		{[
+			{ href: '/', label: 'home', icon: HouseIcon },
+			{ href: '/about', label: 'about', icon: MessageIcon },
+			{ href: '/projects', label: 'projects', icon: FolderIcon },
+			{ href: '/services', label: 'services', icon: WrenchIcon },
+			{ href: '/contact', label: 'contact', icon: MailIcon },
+			{ href: '/support', label: 'support', icon: HeartIcon },
+		].map((item) => (
+			<a href={item.href} aria-label={item.label} class="group relative flex h-11 w-11 items-center justify-center rounded-full transition hover:bg-white/70" aria-current={isActive(item.href) ? 'page' : undefined}>
+				<item.icon className={`h-5 w-5 transition-colors duration-200 ${isActive(item.href) ? 'text-primary' : 'text-neutral-500 group-hover:text-ink'}`} />
+				<span class="absolute -top-8 left-1/2 -translate-x-1/2 rounded-md bg-ink px-2.5 py-0.5 text-[10px] font-monospace text-white opacity-0 translate-y-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0 whitespace-nowrap pointer-events-none z-50">{item.label}</span>
+			</a>
+		))}
+	</div>
+</nav>
 
 <style>
-	.sidebar-burger {
-		backdrop-filter: blur(8px);
-		background: var(--color-cream);
-		border-radius: .75rem;
-		border: 1px solid var(--hard);
-		box-shadow: 0 2px 10px -2px #11182730;
-		transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-	}
-
-	.sidebar-burger:active {
-		transform: scale(0.92);
-	}
-
-	.toggle-bar {
-		position: absolute;
-		right: 9px;
-		top: calc(50% - 1px);
-		height: 2px;
-		width: 22px;
-		background: var(--color-ink);
-		border-radius: 2px;
-		transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.2s ease;
-	}
-
-	.toggle-bar:nth-of-type(1) {
-		transform: translateY(-5px);
-	}
-
-	.toggle-bar:nth-of-type(3) {
-		transform: translateY(5px);
-	}
-
-	#sidebar-toggle[aria-expanded='true'] .toggle-bar:nth-of-type(1) {
-		transform: rotate(45deg);
-	}
-
-	#sidebar-toggle[aria-expanded='true'] .toggle-bar:nth-of-type(2) {
-		opacity: 0;
-	}
-
-	#sidebar-toggle[aria-expanded='true'] .toggle-bar:nth-of-type(3) {
-		transform: rotate(-45deg);
-	}
+	.icon-sun { display: none; }
+	.dark .icon-sun { display: block; }
+	.dark .icon-moon { display: none; }
 </style>
 
 <script>
-	const toggle = document.getElementById('sidebar-toggle');
-	const sidebar = document.getElementById('sidebar');
-	const backdrop = document.getElementById('sidebar-backdrop');
-
-	const openSidebar = () => {
-		sidebar?.classList.remove('-translate-x-full');
-		toggle?.setAttribute('aria-expanded', 'true');
-		backdrop?.classList.remove('hidden');
-	};
-
-	const closeSidebar = () => {
-		sidebar?.classList.add('-translate-x-full');
-		toggle?.setAttribute('aria-expanded', 'false');
-		backdrop?.classList.add('hidden');
-	};
-
-	toggle?.addEventListener('click', () => {
-		if (sidebar?.classList.contains('-translate-x-full')) openSidebar();
-		else closeSidebar();
-	});
-
-	backdrop?.addEventListener('click', closeSidebar);
-
-	// Re-tapping the link of the page you're already on shouldn't be a full reload.
-	document.querySelectorAll<HTMLAnchorElement>('#sidebar a[aria-current="page"]').forEach((link) => {
-		link.addEventListener('click', (e) => {
-			e.preventDefault();
-			closeSidebar();
-		});
-	});
-
-	document.addEventListener('keydown', (e) => {
-		if (e.key === 'Escape') closeSidebar();
-	});
-
-	const themeToggle = document.getElementById('theme-toggle');
-	themeToggle?.addEventListener('click', () => {
+	const themeToggleDesktop = document.getElementById('theme-toggle');
+	themeToggleDesktop?.addEventListener('click', () => {
 		const root = document.documentElement;
 		root.classList.add('theme-anim');
 		const isDark = root.classList.toggle('dark');
 		root.style.colorScheme = isDark ? 'dark' : 'light';
 		localStorage.setItem('theme', isDark ? 'dark' : 'light');
 		setTimeout(() => root.classList.remove('theme-anim'), 500);
+	});
+
+	const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+	themeToggleMobile?.addEventListener('click', () => {
+		const root = document.documentElement;
+		root.classList.add('theme-anim');
+		const isDark = root.classList.toggle('dark');
+		root.style.colorScheme = isDark ? 'dark' : 'light';
+		localStorage.setItem('theme', isDark ? 'dark' : 'light');
+		setTimeout(() => root.classList.remove('theme-anim'), 500);
+	});
+
+	const btn = document.getElementById('mobile-elsewhere-btn');
+	const dropdown = document.getElementById('mobile-elsewhere-dropdown');
+	const caret = document.getElementById('elsewhere-caret');
+	btn?.addEventListener('click', () => {
+		const open = dropdown?.classList.contains('scale-y-0');
+		if (open) {
+			dropdown?.classList.remove('scale-y-0', 'opacity-0');
+			dropdown?.classList.add('scale-y-100', 'opacity-100');
+			caret?.classList.add('rotate-180');
+		} else {
+			dropdown?.classList.add('scale-y-0', 'opacity-0');
+			dropdown?.classList.remove('scale-y-100', 'opacity-100');
+			caret?.classList.remove('rotate-180');
+		}
+	});
+	document.addEventListener('click', (e) => {
+		if (!btn?.contains(e.target as Node) && !dropdown?.contains(e.target as Node)) {
+			dropdown?.classList.add('scale-y-0', 'opacity-0');
+			dropdown?.classList.remove('scale-y-100', 'opacity-100');
+			caret?.classList.remove('rotate-180');
+		}
 	});
 </script>
