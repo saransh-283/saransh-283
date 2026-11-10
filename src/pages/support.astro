@@ -3,9 +3,13 @@ import Layout from '@layouts/Layout.astro';
 import { Icon } from 'astro-icon/components';
 import PayUIcon from '@icons/payu.astro';
 import { supportMethods } from '@data/support';
+import PayuCard from '@components/ui/PayuCard.astro';
+import ThankYouDialog from '@components/ui/ThankYouDialog.astro';
 
-const links = supportMethods.filter((m) => m.kind === 'link');
+const links = supportMethods.filter((m) => m.kind === 'link' && m.id !== 'payu');
 const wallets = supportMethods.filter((m) => m.kind === 'address');
+const urlParams = new URLSearchParams(Astro.url.search);
+const showThankYou = urlParams.get('status') === 'success';
 
 const marqueePhrases = [
 	'building in public',
@@ -41,6 +45,10 @@ const iconFor: Record<string, any> = {
 				Everything here is free - no paywalls, no locked features. But if something I built saved you time or made you grin, a small tip keeps the servers humming and the ideas compiling.
 			</p>
 		</header>
+
+		<section class="mt-10 reveal">
+			<PayuCard id="payu" />
+		</section>
 
 		<section class="mt-10 reveal">
 			<h2 class="text-base font-bold text-ink">Pay links</h2>
@@ -138,6 +146,7 @@ const iconFor: Record<string, any> = {
 			</p>
 			<p class="mt-2 font-monospace text-xs text-neutral-400">$ exit 0 - thanks for being here &hearts;</p>
 		</section>
+		<ThankYouDialog open={showThankYou} />
 	</main>
 </Layout>
 

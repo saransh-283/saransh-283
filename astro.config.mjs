@@ -7,17 +7,17 @@ import tailwindcss from '@tailwindcss/vite';
 
 const SITE_URL = 'https://saranshkawadkar.dev';
 
-// https://astro.build/config
+// Local dev config (Android/Termux compatible - no Cloudflare workerd binary)
 export default defineConfig({
   site: SITE_URL,
   integrations: [
+    mdx(),
     sitemap({
       changefreq: 'weekly',
       priority: 0.7,
       lastmod: new Date(),
       filter: (page) => !page.endsWith('.xml'),
     }),
-    mdx(),
     icon({
       include: {
         mdi: ["*"]
@@ -26,5 +26,6 @@ export default defineConfig({
   ],
   vite: {
     plugins: [tailwindcss()],
-  }
+  },
+  output: 'static',
 });
