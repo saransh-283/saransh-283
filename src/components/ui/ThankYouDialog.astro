@@ -6,7 +6,7 @@ interface ThankYouDialogProps {
 const { open = false } = Astro.props as ThankYouDialogProps;
 ---
 
-<div class="thank-you-dialog-wrapper" aria-hidden="true">
+<div class="thank-you-dialog-wrapper pointer-events-none" aria-hidden="true">
   <dialog
     class="thank-you-dialog fixed inset-0 z-[60] flex items-center justify-center bg-black/40 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300"
     aria-modal="true"
@@ -38,10 +38,11 @@ const { open = false } = Astro.props as ThankYouDialogProps;
     if (!dialog) return;
 
     function openDialog() {
+      wrapper?.classList.remove('pointer-events-none');
+      wrapper?.classList.add('pointer-events-auto');
       dialog.classList.remove('opacity-0', 'pointer-events-none');
       dialog.classList.add('opacity-100', 'pointer-events-auto');
       dialog.showModal();
-      // Animate content scale
       const content = dialog.querySelector('.bg-white, .dark\\:bg-neutral-800');
       if (content) {
         content.style.transform = 'scale(1)';
@@ -53,6 +54,8 @@ const { open = false } = Astro.props as ThankYouDialogProps;
       if (content) {
         content.style.transform = 'scale(0.95)';
       }
+      wrapper?.classList.remove('pointer-events-auto');
+      wrapper?.classList.add('pointer-events-none');
       dialog.classList.remove('opacity-100', 'pointer-events-auto');
       dialog.classList.add('opacity-0', 'pointer-events-none');
       setTimeout(() => dialog.close(), 300);
