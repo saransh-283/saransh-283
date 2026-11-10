@@ -37,7 +37,7 @@ function detectCurrency(): string {
         <span class="block font-semibold text-ink">PayU</span>
         <span class="block text-xs text-neutral-500">UPI / cards / netbanking - India (₹)</span>
       </span>
-      <span class="ml-auto transition-transform duration-300" id="payu-chevron">▾</span>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="ml-auto h-5 w-5 fill-current transition-transform duration-300" id="payu-chevron"><path d="M7 10l5 5 5-5z"/></svg>
     </div>
   </section>
 
@@ -117,13 +117,13 @@ function detectCurrency(): string {
     function toggle() {
       isOpen = !isOpen;
       card.setAttribute('aria-expanded', String(isOpen));
-      if (isOpen) {
+    if (isOpen) {
         collapse.style.maxHeight = collapse.scrollHeight + 'px';
-        chevron.textContent = '▴';
-      } else {
+        chevron.classList.add('rotate-180');
+    } else {
         collapse.style.maxHeight = '0';
-        chevron.textContent = '▾';
-      }
+        chevron.classList.remove('rotate-180');
+    }
     }
 
     card.addEventListener('click', toggle);
